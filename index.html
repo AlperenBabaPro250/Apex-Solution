@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Solutions - Profesyonel web &ccedil;&ouml;z&uuml;mleri ve AI asistan&iacute;">
+    <title>Apex Solutions - AI Powered</title>
+    <style>
+        :root {
+            --primary-bg: linear-gradient(135deg, #0d1421 0%, #1a1a2e 50%, #16213e 100%);
+            --secondary-bg: rgba(255, 255, 255, 0.03);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --dark-glass-bg: rgba(0, 0, 0, 0.4);
+            --primary-text: #ffffff;
+            --secondary-text: #b8c5d1;
+            --tertiary-text: #8892b0;
+            --accent-color: #00d4ff;
+            --accent-hover: #00b8e6;
+            --success-color: #00ff88;
+            --danger-color: #ff4757;
+            --warning-color: #ffa502;
+            --dark-surface: rgba(16, 20, 43, 0.8);
+            --darker-surface: rgba(10, 14, 35, 0.9);
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary-bg);
+            color: var(--primary-text);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        /* Login Modal */
+        #loginModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loginBox, #registerBox {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 380px;
+            color: var(--primary-text);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+        }
+
+        #loginBox.fade-out, #registerBox.fade-out {
+            opacity: 0;
+            transform: scale(0.8) translateY(-50px);
+        }
+
+        #registerBox {
+            display: none;
+        }
+
+        #loginBox h2, #registerBox h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #loginBox input, #registerBox input {
+            width: 100%;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        #loginBox input:focus, #registerBox input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        #loginBox input::placeholder, #registerBox input::placeholder {
+            color: var(--tertiary-text);
+        }
+
+        #loginBox button, #registerBox button {
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #loginBox button:hover, #registerBox button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        #loginBox button:active, #registerBox button:active {
+            transform: translateY(0);
+        }
+
+        .switch-form {
+            color: var(--accent-color);
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .switch-form:hover {
+            color: var(--accent-hover);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        #loginError, #registerError {
+            color: var(--danger-color);
+            margin-top: 15px;
+            font-weight: 600;
+            display: none;
+            min-height: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 71, 87, 0.1);
+        }
+
+        /* Main Content */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-left: 0;
+            min-height: 100vh;
+        }
+
+        #main-content.fade-in {
+            opacity: 1 !important;
+        }
+
+        #main-content.shifted {
+            margin-left: 280px;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--primary-text);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .brand-text {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--secondary-text);
+            padding: 15px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Sidebar */
+        #sidebar-toggle {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            backdrop-filter: blur(20px);
+            color: white;
+            width: 50px;
+            height: 120px;
+            border: none;
+            cursor: pointer;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 1000;
+            border-radius: 0 20px 20px 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+        }
+
+        #sidebar-toggle:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        #sidebar-toggle.open {
+            left: 280px;
+        }
+
+        /* Men&uuml; butonu hareket s&inodot;n&inodot;flar&inodot; */
+        #sidebar-toggle.moved-down {
+            top: calc(50% + 130px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #sidebar {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            padding-top: 20px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        #sidebar.open {
+            left: 0;
+        }
+
+        #sidebar button {
+            display: block;
+            width: 100%;
+            padding: 20px 25px;
+            background: transparent;
+            border: none;
+            color: var(--primary-text);
+            text-align: left;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #sidebar button:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-color);
+            padding-left: 35px;
+        }
+
+        #sidebar button:not(:last-child) {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Content */
+        .content {
+            padding: 40px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .content > div {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .content > div.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content > div:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--secondary-text);
+            font-size: 16px;
+        }
+
+        /* AI Chat Section */
+        #ai-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 400px;
+            height: 500px;
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            transform: translateY(100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #ai-chat.open {
+            transform: translateY(0);
+        }
+
+        #ai-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1002;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        #ai-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+        }
+
+        #chat-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chat-header h3 {
+            color: var(--accent-color);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        #chat-close {
+            background: none;
+            border: none;
+            color: var(--primary-text);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        #chat-close:hover {
+            background: var(--danger-color);
+        }
+
+        #chat-messages {
+            height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) transparent;
+        }
+
+        #chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 85%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .ai-message {
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            margin-right: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .typing-indicator {
+            display: none;
+            background: var(--glass-bg);
+            color: var(--secondary-text);
+            margin-right: auto;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 85%;
+            border: 1px solid var(--border-color);
+        }
+
+        .typing-dots {
+            display: inline-flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        #chat-input-container {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+        }
+
+        #chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #chat-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        #chat-input::placeholder {
+            color: var(--tertiary-text);
+        }
+
+        #send-btn {
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        #send-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        #send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        /* Game Buttons */
+        .game-button {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .game-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .game-container {
+            margin: 20px 0;
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Images */
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-wrapper img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background: #ff3742;
+            transform: scale(1.1);
+        }
+
+        /* Custom Image Section */
+        .custom-image-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .custom-image-input {
+            width: 300px;
+            padding: 12px 16px;
+            margin: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            font-size: 14px;
+        }
+
+        .custom-image-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .custom-image-input::placeholder {
+            color: var(--tertiary-text);
+        }
+
+        .add-image-btn {
+            padding: 12px 25px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .add-image-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Update Button */
+        .update-btn {
+            margin-left: 15px;
+            padding: 10px 15px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .update-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--secondary-text);
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #ai-chat {
+                width: calc(100vw - 40px);
+                right: 20px;
+                bottom: 100px;
+            }
+
+            #loginBox, #registerBox {
+                width: calc(100vw - 40px);
+                margin: 0 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            #main-content.shifted {
+                margin-left: 0;
+            }
+
+            #sidebar {
+                width: 100vw;
+            }
+        }
+
+        /* Sub Menu */
+        .has-sub-menu {
+            position: relative;
+        }
+
+        .sub-menu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            display: none;
+            width: 220px;
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border-color);
+            border-radius: 0 15px 15px 0;
+            z-index: 1001;
+        }
+
+        .has-sub-menu:hover .sub-menu {
+            display: block;
+        }
+
+        .sub-menu button {
+            padding: 15px 20px;
+            font-size: 14px;
+            color: var(--secondary-text);
+        }
+
+        .sub-menu button:hover {
+            color: var(--accent-color);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        /* Premium features styling */
+        .premium-features {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .premium-features h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .premium-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .premium-features li {
+            padding: 8px 0;
+            color: var(--secondary-text);
+        }
+
+        /* Grid layouts */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .grid-item.accent {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .grid-item.pink {
+            background: rgba(255, 107, 157, 0.05);
+            border: 1px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .grid-item.green {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .grid-item h3 {
+            margin-bottom: 15px;
+        }
+
+        .grid-item.accent h3 {
+            color: var(--accent-color);
+        }
+
+        .grid-item.pink h3 {
+            color: #ff6b9d;
+        }
+
+        .grid-item.green h3 {
+            color: var(--success-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loginModal">
+        <div id="loginBox">
+            <h2>Giri&scedil; Yap</h2>
+            <input type="text" id="username" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
+            <input type="password" id="password" placeholder="&Scedil;ifre" />
+            <button onclick="checkLogin()">Giri&scedil; Yap</button>
+            <div id="loginError">Kullan&inodot;c&inodot; Ad&inodot; Veya &Scedil;ifre Hatal&inodot;!</div>
+            <a class="switch-form" onclick="showRegisterForm()">Hesab&inodot;n&inodot;z yok mu? Kay&inodot;t Olun</a>
+        </div>
+
+        <div id="registerBox">
+            <h2>Kay&inodot;t Ol</h2>
+            <input type="text" id="regUsername" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
+            <input type="password" id="regPassword" placeholder="&Scedil;ifre" />
+            <input type="password" id="regConfirmPassword" placeholder="&Scedil;ifre Tekrar" />
+            <button onclick="registerUser()">Kay&inodot;t Ol</button>
+            <div id="registerError"></div>
+            <a class="switch-form" onclick="showLoginForm()">Zaten hesab&inodot;n&inodot;z var m&inodot;? Giri&scedil; Yap&inodot;n</a>
+        </div>
+    </div>
+
+    <div id="sidebar-container" 
+         onmouseover="openSidebar()" 
+         onmouseleave="closeSidebar()">
+        <button id="sidebar-toggle">MEN&Uuml;</button>
+        <div id="sidebar">
+            <button onclick="showSection('anasayfa')">Anasayfa</button>
+            <button onclick="showSection('hakkimizda')">Hakk&inodot;m&inodot;zda</button>
+            <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
+                <button>G&ouml;rseller</button>
+                <div class="sub-menu">
+                    <button onclick="showCategory('teknoloji'); showSection('gorseller')">Teknoloji</button>
+                    <button onclick="showCategory('futbol'); showSection('gorseller')">Futbol</button>
+                    <button onclick="showCategory('yuzme'); showSection('gorseller')">Y&uuml;zme</button>
+                    <button onclick="showCategory('doga'); showSection('gorseller')">Do&gbreve;a</button>
+                    <button onclick="showCategory('su'); showSection('gorseller')">Su</button>
+                </div>
+            </div>
+            <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
+                <button>Oyunlar</button>
+                <div class="sub-menu">
+                    <button onclick="showGames('korku')">Korku Oyunlar&inodot;</button>
+                    <button onclick="showGames('aksiyon')">Aksiyon Oyunlar&inodot;</button>
+                    <button onclick="showGames('silah')">Silah Oyunlar&inodot;</button>
+                    <button onclick="showGames('futbol')">Futbol Oyunlar&inodot;</button>
+                </div>
+            </div>
+            <button onclick="showSection('bagis')">Ba&gbreve;&inodot;&scedil;</button>
+            <button onclick="showSection('hizmet')">M&uuml;&scedil;teri Hizmetleri</button>
+        </div>
+    </div>
+
+    <!-- AI Chat Toggle Button -->
+    <button id="ai-toggle" onclick="toggleAiChat()">AI</button>
+
+    <!-- AI Chat Window -->
+    <div id="ai-chat">
+        <div id="chat-header">
+            <h3>AI Asistan&inodot;</h3>
+            <button id="chat-close" onclick="toggleAiChat()">X</button>
+        </div>
+        <div id="chat-messages">
+            <div class="message ai-message">
+                Merhaba! Ben Apex AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?
+            </div>
+        </div>
+        <div class="typing-indicator" id="typing-indicator">
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Mesaj&inodot;n&inodot;z&inodot; yaz&inodot;n..." onkeypress="handleChatInput(event)">
+            <button id="send-btn" onclick="sendMessage()">></button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <h1>Apex Solutions</h1>
+            <p style="font-size: 1.2rem; margin-top: 10px; color: var(--secondary-text);">AI Destekli Web &Ccedil;&ouml;z&uuml;mleri</p>
+        </header>
+
+        <div class="brand-text">
+            by AlperenBabaPro250 AI Powered
+        </div>
+
+        <div class="content">
+            <div id="anasayfa">
+                <h2>Apex Solutions'a Ho&scedil; Geldiniz!</h2>
+                <p>Yapay zeka destekli profesyonel web &ccedil;&ouml;z&uuml;mleri sunan &scedil;irketimiz, i&scedil;letmenizin dijital varl&inodot;&gbreve;&inodot;n&inodot; g&uuml;&ccedil;lendirmek i&ccedil;in burada. Yenilik&ccedil;i tasar&inodot;mlar, kullan&inodot;c&inodot; dostu aray&uuml;zler ve ak&inodot;ll&inodot; AI asistan&inodot;m&inodot;zla markan&inodot;z&inodot; &ouml;ne &ccedil;&inodot;kar&inodot;yoruz.</p>
+                <p><strong>Yeni &Ouml;zellik:</strong> Sa&gbreve; alttaki AI asistan&inodot;m&inodot;zla konu&scedil;arak sitemizdeki t&uuml;m &ouml;zellikler hakk&inodot;nda bilgi alabilir, sorular&inodot;n&inodot;z&inodot; sorabilirsiniz!</p>
+                <p>Hizmetlerimiz hakk&inodot;nda daha fazla bilgi edinmek i&ccedil;in men&uuml;y&uuml; kullanabilir veya AI asistan&inodot;m&inodot;zla sohbet edebilirsiniz.</p>
+                
+                <div class="premium-features">
+                    <h3>Premium &Ouml;zellikler</h3>
+                    <ul>
+                        <li>AI Destekli 24/7 M&uuml;&scedil;teri Deste&gbreve;i</li>
+                        <li>Dinamik G&ouml;rsel Galeriler</li>
+                        <li>Interaktif Oyun Platformu</li>
+                        <li>Modern Glassmorphism Tasar&inodot;m</li>
+                        <li>Mobil Uyumlu Responsive Yap&inodot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="hakkimizda" class="hidden">
+                <h2>Hakk&inodot;m&inodot;zda</h2>
+                <p>Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; bir web geli&scedil;tirme ve dijital &ccedil;&ouml;z&uuml;mler &scedil;irketidir. M&uuml;&scedil;terilerimize &ouml;zel &ccedil;&ouml;z&uuml;mler sunarak i&scedil;letmelerinin dijital d&uuml;nyada ba&scedil;ar&inodot;l&inodot; olmalar&inodot;n&inodot; sa&gbreve;l&inodot;yoruz.</p>
+                
+                <div class="grid-container">
+                    <div class="grid-item accent">
+                        <h3>Vizyonumuz</h3>
+                        <p>Teknolojinin g&uuml;c&uuml;n&uuml; kullanarak m&uuml;&scedil;terilerimizin i&scedil; s&uuml;re&ccedil;lerini kolayla&scedil;t&inodot;rmak ve dijital d&ouml;n&uuml;&scedil;&uuml;mlerine liderlik etmek. AI teknolojileri ile gelece&gbreve;in web &ccedil;&ouml;z&uuml;mlerini bug&uuml;nden sunmak.</p>
+                    </div>
+                    
+                    <div class="grid-item pink">
+                        <h3>Misyonumuz</h3>
+                        <p>Yenilik&ccedil;i, kullan&inodot;c&inodot; dostu ve etkili web &ccedil;&ouml;z&uuml;mleri sunarak m&uuml;&scedil;teri memnuniyetini en &uuml;st seviyede tutmak. AI destekli hizmetlerle sekt&ouml;rde &ouml;nc&uuml; olmak.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 20px;">Ekibimiz</h3>
+                    <p>Deneyimli yaz&inodot;l&inodot;m geli&scedil;tiriciler, UI/UX tasar&inodot;mc&inodot;lar ve AI uzmanlar&inodot;ndan olu&scedil;an ekibimizle projelerinizi hayata ge&ccedil;iriyoruz.</p>
+                </div>
+            </div>
+
+            <div id="gorseller" class="hidden">
+                <h2 id="gorsel-baslik">G&ouml;rseller
+                    <button class="update-btn" onclick="updateImages()">Yenile</button>
+                </h2>
+                <p id="gorsel-aciklama">AlperenBabaPro250 taraf&inodot;ndan &ouml;zenle se&ccedil;ilmi&scedil; ve tasar&inodot;m&inodot;&scedil; kaliteli g&ouml;rseller koleksiyonu ile projelerinize ilham kat&inodot;n. AI asistan&inodot;m&inodot;zdan g&ouml;rsel &ouml;nerileri de alabilirsiniz!</p>
+
+                <div id="image-container">
+                </div>
+                
+                <div class="custom-image-section">
+                    <h3>&Ouml;zel Proje Ekleyin</h3>
+                    <input type="url" class="custom-image-input" id="customImageUrl" placeholder="Resim URL'sini buraya yap&inodot;&scedil;t&inodot;r&inodot;n...">
+                    <button class="add-image-btn" onclick="addCustomImage()">Resmi Ekle</button>
+                </div>
+            </div>
+
+            <div id="bagis" class="hidden">
+                <h2>Ba&gbreve;&inodot;&scedil;</h2>
+                <div class="grid-item green">
+                    <p>Open source projelerimize ve AI geli&scedil;tirmelerimize destek olmak isterseniz ileti&scedil;ime ge&ccedil;in:</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 15px;">0 505 606 91 20</p>
+                    <p style="margin-top: 15px; color: var(--secondary-text);">Destekleriniz sayesinde daha g&uuml;&ccedil;l&uuml; AI &ouml;zellikler geli&scedil;tirmeye devam ediyoruz!</p>
+                </div>
+            </div>
+
+            <div id="hizmet" class="hidden">
+                <h2>M&uuml;&scedil;teri Hizmetleri</h2>
+                <div class="grid-container">
+                    <div class="grid-item accent">
+                        <h3>&Idot;leti&scedil;im</h3>
+                        <p><strong>Telefon:</strong> 0 536 799 50 89</p>
+                        <p><strong>E-posta:</strong> alperenizer07@gmail.com</p>
+                        <p><strong>&Ccedil;al&inodot;&scedil;ma Saatleri:</strong> Hafta i&ccedil;i 09:00 - 18:00</p>
+                    </div>
+                    
+                    <div class="grid-item pink">
+                        <h3>AI Destek</h3>
+                        <p>7/24 aktif AI asistan&inodot;m&inodot;z size an&inodot;nda yard&inodot;m edebilir!</p>
+                        <p style="margin-top: 10px;">Sa&gbreve; alttaki chat butonuna t&inodot;klayarak hemen ba&scedil;layabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="games" class="hidden">
+                <h2 id="games-title"></h2>
+                <p id="games-description"></p>
+                <div id="games-content"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Apex Solutions - T&uuml;m Haklar&inodot; Sakl&inodot;d&inodot;r.</p>
+            <p style="margin-top: 10px; color: var(--accent-color);">AI Powered &bull; Future Ready &bull; Innovation First</p>
+        </footer>
+    </div>
+
+    <script>
+        // HTML entity çözümleyici fonksiyon
+        function decodeHtml(html) {
+            const txt = document.createElement('textarea');
+            txt.innerHTML = html;
+            return txt.value;
+        }
+
+        // Kullan&inodot;c&inodot; verileri ve de&gbreve;i&scedil;kenler
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let currentUser = null;
+        let currentCategory = '';
+        let allCategoryImages = {};
+        let aiChatOpen = false;
+
+        // AI Chat mesajlar&inodot; ve responses
+        const aiResponses = {
+            greetings: [
+                "Merhaba! Apex Solutions AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?",
+                "Selam! Ben buraday&inodot;m, ne &ouml;&gbreve;renmek istiyorsunuz?",
+                "Ho&scedil; geldiniz! Sorular&inodot;n&inodot;z&inodot; sorabilirsiniz!"
+            ],
+            about: [
+                "Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; modern bir web geli&scedil;tirme &scedil;irketidir. AI destekli &ccedil;&ouml;z&uuml;mler sunuyoruz!",
+                "&Scedil;irketimiz hakk&inodot;nda daha fazla bilgi i&ccedil;in 'Hakk&inodot;m&inodot;zda' b&ouml;l&uuml;m&uuml;n&uuml; ziyaret edebilirsiniz.",
+                "AlperenBabaPro250 taraf&inodot;ndan kurulan &scedil;irketimiz, yenilik&ccedil;i web &ccedil;&ouml;z&uuml;mleri sunmaktad&inodot;r."
+            ],
+            services: [
+                "Hizmetlerimiz: Web tasar&inodot;m, AI entegrasyonu, g&ouml;rsel galeriler, oyun platformlar&inodot; ve 7/24 AI destek!",
+                "Profesyonel web &ccedil;&ouml;z&uuml;mleri, modern tasar&inodot;m ve kullan&inodot;c&inodot; dostu aray&uuml;zler sunuyoruz.",
+                "M&uuml;&scedil;teri Hizmetleri i&ccedil;in: 0 536 799 50 89 numaras&inodot;n&inodot; arayabilirsiniz!"
+            ],
+            games: [
+                "Oyun b&ouml;l&uuml;m&uuml;m&uuml;zde korku, aksiyon, silah ve futbol oyunlar&inodot; bulabilirsiniz!",
+                "Men&uuml;den 'Oyunlar' b&ouml;l&uuml;m&uuml;n&uuml; se&ccedil;erek kategorilere g&ouml;z atabilirsiniz.",
+                "En pop&uuml;ler oyunlar&inodot;m&inodot;z: 911 Prey, Prison Escape, Football Legends!"
+            ],
+            images: [
+                "G&ouml;rsel galerimizde teknoloji, futbol, y&uuml;zme, do&gbreve;a ve su kategorilerinde resimler var!",
+                "&Ouml;zel resim URL'si ekleyerek kendi g&ouml;rsellerinizi de ekleyebilirsiniz.",
+                "G&ouml;rseller b&ouml;l&uuml;m&uuml;nde Yenile butonu ile rastgele yeni resimler y&uuml;kleyebilirsiniz!"
+            ],
+            help: [
+                "Size yard&inodot;mc&inodot; olmak i&ccedil;in buray&inodot;m! &Scedil;u konularda sorular sorabilirsiniz:\n• &Scedil;irket hakk&inodot;nda\n• Hizmetlerimiz\n• Oyunlar\n• G&ouml;rseller\n• &Idot;leti&scedil;im bilgileri",
+                "Men&uuml;deki t&uuml;m b&ouml;l&uuml;mler hakk&inodot;nda bilgi verebilirim. Ne &ouml;&gbreve;renmek istiyorsunuz?",
+                "Herhangi bir teknik sorun ya&scedil;&inodot;yorsan&inodot;z da bana s&ouml;yleyebilirsiniz!"
+            ],
+            default: [
+                "&Idot;lgin&ccedil; bir soru! Bu konuda size nas&inodot;l yard&inodot;mc&inodot; olabilirim?",
+                "Daha spesifik bir &scedil;ey sorabilirsiniz. Hangi konuda yard&inodot;m istiyorsunuz?",
+                "Bu konuda detayl&inodot; bilgi veremem ama genel sorular&inodot;n&inodot;z&inodot; yan&inodot;tlayabilirim!"
+            ]
+        };
+
+        // AI Chat Functions
+        function toggleAiChat() {
+            const chatWindow = document.getElementById('ai-chat');
+            const toggleBtn = document.getElementById('ai-toggle');
+            
+            aiChatOpen = !aiChatOpen;
+            
+            if (aiChatOpen) {
+                chatWindow.classList.add('open');
+                toggleBtn.innerHTML = 'X';
+                toggleBtn.style.background = 'var(--danger-color)';
+            } else {
+                chatWindow.classList.remove('open');
+                toggleBtn.innerHTML = 'AI';
+                toggleBtn.style.background = 'linear-gradient(45deg, var(--accent-color), #ff6b9d)';
+            }
+        }
+
+        function handleChatInput(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Kullanýcý mesajýný ekle (HTML entity olmadan)
+            addMessageToChat(message, 'user');
+            input.value = '';
+            
+            // AI cevabýný simüle et
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                const response = generateAIResponse(message);
+                hideTypingIndicator();
+                // AI yanýtýný HTML entity ile ekle
+                addAIMessageToChat(response);
+            }, Math.random() * 2000 + 1000);
+        }
+
+        function addMessageToChat(message, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message; // Kullanýcý mesajý için textContent
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function addAIMessageToChat(htmlMessage) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ai-message';
+            messageDiv.innerHTML = htmlMessage; // AI mesajý için innerHTML
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typing-indicator').style.display = 'block';
+            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Selamlama kontrolü
+            if (message.includes('merhaba') || message.includes('selam') || message.includes('hey') || message.includes('hi')) {
+                return getRandomResponse(aiResponses.greetings);
+            }
+            
+            // Þirket hakkýnda
+            if (message.includes('hakkýnda') || message.includes('þirket') || message.includes('apex')) {
+                return getRandomResponse(aiResponses.about);
+            }
+            
+            // Hizmetler
+            if (message.includes('hizmet') || message.includes('ne yapýyorsunuz') || message.includes('service')) {
+                return getRandomResponse(aiResponses.services);
+            }
+            
+            // Oyunlar
+            if (message.includes('oyun') || message.includes('game') || message.includes('oyna')) {
+                return getRandomResponse(aiResponses.games);
+            }
+            
+            // Görseller
+            if (message.includes('resim') || message.includes('görsel') || message.includes('fotoðraf') || message.includes('image')) {
+                return getRandomResponse(aiResponses.images);
+            }
+            
+            // Yardým
+            if (message.includes('yardým') || message.includes('help') || message.includes('nasýl') || message.includes('ne yapabilirim')) {
+                return getRandomResponse(aiResponses.help);
+            }
+            
+            // Ýletiþim
+            if (message.includes('iletiþim') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
+                return "&Idot;leti&scedil;im bilgilerimiz: 0 536 799 50 89 | alperenizer07@gmail.com | &Ccedil;al&inodot;&scedil;ma saatleri: 09:00-18:00";
+            }
+            
+            // Teþekkür
+            if (message.includes('teþekkür') || message.includes('saðol') || message.includes('thank')) {
+                return "Rica ederim! Ba&scedil;ka bir &scedil;ey i&ccedil;in yard&inodot;ma ihtiyac&inodot;n&inodot;z olursa buray&inodot;m!";
+            }
+            
+            // Varsayýlan cevap
+            return getRandomResponse(aiResponses.default);
+        }
+
+        function getRandomResponse(responses) {
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Menü butonu hareket fonksiyonlarý
+        function moveMenuButtonDown() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            sidebarToggle.classList.add('moved-down');
+        }
+
+        function moveMenuButtonUp() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            sidebarToggle.classList.remove('moved-down');
+        }
+
+        // Form geçiþ fonksiyonlarý
+        function showRegisterForm() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('registerBox').style.display = 'block';
+            document.getElementById('registerError').textContent = '';
+        }
+
+        function showLoginForm() {
+            document.getElementById('registerBox').style.display = 'none';
+            document.getElementById('loginBox').style.display = 'block';
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        // Kayýt olma fonksiyonu
+        function registerUser() {
+            const username = document.getElementById('regUsername').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+            const errorElement = document.getElementById('registerError');
+
+            if (!username || !password || !confirmPassword) {
+                errorElement.innerHTML = 'T&uuml;m alanlar&inodot; doldurun!';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                errorElement.innerHTML = '&Scedil;ifreler uymuyor!';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (password.length < 4) {
+                errorElement.innerHTML = '&Scedil;ifre en az 4 karakter olmal&inodot;!';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            if (users.some(user => user.username === username)) {
+                errorElement.innerHTML = 'Bu kullan&inodot;c&inodot; ad&inodot; zaten al&inodot;nm&inodot;&scedil;!';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            users.push({
+                username: username,
+                password: password
+            });
+
+            localStorage.setItem('users', JSON.stringify(users));
+            alert(decodeHtml('Kay&inodot;t ba&scedil;ar&inodot;l&inodot;! Giri&scedil; yapabilirsiniz.'));
+            showLoginForm();
+
+            document.getElementById('regUsername').value = '';
+            document.getElementById('regPassword').value = '';
+            document.getElementById('regConfirmPassword').value = '';
+        }
+
+        // Giriþ kontrol fonksiyonu
+        function checkLogin() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const loginError = document.getElementById("loginError");
+            const loginBox = document.getElementById('loginBox');
+            const mainContent = document.getElementById('main-content');
+
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                currentUser = user;
+                loginError.style.display = "none";
+
+                loginBox.classList.add('fade-out');
+
+                setTimeout(() => {
+                    document.getElementById("loginModal").style.display = "none";
+                    loginBox.classList.remove('fade-out');
+
+                    mainContent.style.display = "block";
+                    setTimeout(() => {
+                        mainContent.classList.add('fade-in');
+                    }, 10);
+
+                    document.body.style.overflow = "auto";
+                    showSection('anasayfa');
+                }, 500);
+            } else {
+                loginError.style.display = "block";
+            }
+        }
+
+        // Resim silme fonksiyonu
+        function deleteImage(button) {
+            const imageWrapper = button.parentElement;
+            imageWrapper.style.transform = 'scale(0)';
+            setTimeout(() => {
+                imageWrapper.remove();
+            }, 300);
+            alert(decodeHtml('Resim silindi!'));
+        }
+
+        // Özel resim ekleme
+        function addCustomImage() {
+            const urlInput = document.getElementById('customImageUrl');
+            const imageUrl = urlInput.value.trim();
+
+            if (imageUrl && isValidUrl(imageUrl)) {
+                const container = document.getElementById('image-container');
+
+                const newWrapper = document.createElement('div');
+                newWrapper.className = 'image-wrapper';
+                newWrapper.style.transform = 'scale(0)';
+
+                const newImg = document.createElement('img');
+                newImg.src = imageUrl;
+                newImg.alt = decodeHtml('&Ouml;zel G&ouml;rsel');
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.innerHTML = 'X';
+                deleteBtn.onclick = function() {
+                    deleteImage(this);
+                };
+
+                newWrapper.appendChild(newImg);
+                newWrapper.appendChild(deleteBtn);
+                container.appendChild(newWrapper);
+
+                setTimeout(() => {
+                    newWrapper.style.transform = 'scale(1)';
+                }, 10);
+
+                urlInput.value = '';
+                alert(decodeHtml('Resim ba&scedil;ar&inodot;yla eklendi!'));
+            } else {
+                alert(decodeHtml('L&uuml;tfen ge&ccedil;erli bir resim URL\'si girin!'));
+            }
+        }
+
+        function isValidUrl(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        // Resimleri güncelleme
+        function updateImages() {
+            const container = document.getElementById('image-container');
+            container.style.opacity = '0';
+            
+            setTimeout(() => {
+                container.innerHTML = '';
+                if (currentCategory) {
+                    loadCategoryImages(currentCategory);
+                }
+                container.style.opacity = '1';
+            }, 300);
+        }
+
+        // Rastgele resim seçme
+        function getRandomImages(images, count) {
+            const shuffled = [...images].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        // Kategori resimlerini yükleme
+        function loadCategoryImages(category) {
+            const container = document.getElementById('image-container');
+            container.innerHTML = '';
+            
+            if (!allCategoryImages[category]) {
+                const randomSeed = Date.now();
+                
+                switch(category) {
+                    case 'teknoloji':
+                        allCategoryImages[category] = [
+                            `https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
+                            `https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
+                            `https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
+                            `https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=200&fit=crop&v=${randomSeed + 5}`,
+                            `https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop&v=${randomSeed + 6}`
+                        ];
+                        break;
+                    case 'futbol':
+                        allCategoryImages[category] = [
+                            `https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1544608104-5ba39e51911b?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
+                            `https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
+                            `https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
+                            `https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=300&h=200&fit=crop&v=${randomSeed + 5}`,
+                            `https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=300&h=200&fit=crop&v=${randomSeed + 6}`
+                        ];
+                        break;
+                    case 'yuzme':
+                        allCategoryImages[category] = [
+                            `https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1560089000-7433a4ebbd64?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
+                            `https://images.unsplash.com/photo-1571717898963-d8c0345e70b7?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
+                            `https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
+                            `https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?w=300&h=200&fit=crop&v=${randomSeed + 5}`,
+                            `https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop&v=${randomSeed + 6}`
+                        ];
+                        break;
+                    case 'doga':
+                        allCategoryImages[category] = [
+                            `https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
+                            `https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
+                            `https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
+                            `https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=300&h=200&fit=crop&v=${randomSeed + 5}`,
+                            `https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=200&fit=crop&v=${randomSeed + 6}`
+                        ];
+                        break;
+                    case 'su':
+                        allCategoryImages[category] = [
+                            `https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
+                            `https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
+                            `https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
+                            `https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=200&fit=crop&v=${randomSeed + 5}`,
+                            `https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=300&h=200&fit=crop&v=${randomSeed + 6}`
+                        ];
+                        break;
+                }
+            }
+
+            const randomImages = getRandomImages(allCategoryImages[category], 4);
+
+            randomImages.forEach((url, index) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'image-wrapper';
+                wrapper.style.opacity = '0';
+                wrapper.style.transform = 'scale(0.8)';
+                wrapper.style.transition = 'all 0.5s ease';
+
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} G&ouml;rseli ${index + 1}`;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.innerHTML = 'X';
+                deleteBtn.onclick = function() {
+                    deleteImage(this);
+                };
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(deleteBtn);
+                container.appendChild(wrapper);
+
+                setTimeout(() => {
+                    wrapper.style.opacity = '1';
+                    wrapper.style.transform = 'scale(1)';
+                }, index * 200);
+            });
+        }
+
+        // Kategori gösterme
+        function showCategory(category) {
+            currentCategory = category;
+            
+            const baslik = document.getElementById('gorsel-baslik');
+            const categoryNames = {
+                'teknoloji': 'Teknoloji',
+                'futbol': 'Futbol',
+                'yuzme': 'Y&uuml;zme',
+                'doga': 'Do&gbreve;a',
+                'su': 'Su'
+            };
+            
+            baslik.innerHTML = `G&ouml;rseller - ${categoryNames[category]} <button class="update-btn" onclick="updateImages()">Yenile</button>`;
+            
+            loadCategoryImages(category);
+        }
+
+        // Bölüm gösterme
+        function showSection(id) {
+            const sections = document.querySelectorAll('.content > div');
+            sections.forEach(section => {
+                if (section.id === id) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+
+            if (id === 'gorseller' && !currentCategory) {
+                showCategory('teknoloji');
+            }
+        }
+        
+        // Sidebar fonksiyonlarý
+        function openSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+
+            sidebar.classList.add('open');
+            mainContent.classList.add('shifted');
+            sidebarToggle.classList.add('open');
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+
+            sidebar.classList.remove('open');
+            mainContent.classList.remove('shifted');
+            sidebarToggle.classList.remove('open');
+        }
+
+        // Oyunlarý gösterme
+        function showGames(category) {
+            const gamesTitle = document.getElementById('games-title');
+            const gamesDescription = document.getElementById('games-description');
+            const gamesContent = document.getElementById('games-content');
+
+            switch(category) {
+                case 'korku':
+                    gamesTitle.innerHTML = 'Korku Oyunlar&inodot;';
+                    gamesDescription.innerHTML = 'En iyi korku oyunlar&inodot;ndan se&ccedil;imler. Cesaretin varsa dene!';
+                    gamesContent.innerHTML = `
+                        <div class="game-container">
+                            <h3>911 Prey</h3>
+                            <p>Korku dolu bir hayatta kalma oyunu. Karanl&inodot;kta saklan ve ka&ccedil;!</p>
+                            <a href="https://www.crazygames.com/game/911-prey" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>911 Cannibal</h3>
+                            <p>Korku&ccedil; bir katile kar&scedil;&inodot; hayatta kal. Sinirler i&ccedil;in de&gbreve;il!</p>
+                            <a href="https://www.crazygames.com/game/911-cannibal" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Antarctica 88</h3>
+                            <p>Buz gibi bir korku deneyimi. So&gbreve;uktan de&gbreve;il korkudan titreyeceksin!</p>
+                            <a href="https://www.crazygames.com/game/antarctica-88" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                    `;
+                    break;
+                case 'aksiyon':
+                    gamesTitle.innerHTML = 'Aksiyon Oyunlar&inodot;';
+                    gamesDescription.innerHTML = 'Adrenalin dolu aksiyon oyunlar&inodot;. H&inodot;zla hareket et!';
+                    gamesContent.innerHTML = `
+                        <div class="game-container">
+                            <h3>Prison Escape</h3>
+                            <p>Hapishaneden ka&ccedil;&inodot;&scedil; maceras&inodot;. &Ouml;zg&uuml;rl&uuml;&gbreve;&uuml;n yolu zor!</p>
+                            <a href="https://www.crazygames.com/game/prison-escape-lnj" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Schoolboy Escape</h3>
+                            <p>Okuldan ka&ccedil;&inodot;&scedil; maceras&inodot;. &Ouml;&gbreve;renci olman&inodot;n zorluklar&inodot;n&inodot; ya&scedil;a!</p>
+                            <a href="https://www.crazygames.com/game/schoolboy-escape-runaway" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Squid Game</h3>
+                            <p>Pop&uuml;ler diziden uyarlama. Hayatta kalmak i&ccedil;in oyun oyna!</p>
+                            <a href="https://www.crazygames.com/game/squid-game-online" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                    `;
+                    break;
+                case 'silah':
+                    gamesTitle.innerHTML = 'Silah Oyunlar&inodot;';
+                    gamesDescription.innerHTML = 'Silah oyunlar&inodot; severler i&ccedil;in &ouml;zel se&ccedil;ilmi&scedil; oyunlar. Ni&scedil;an&inodot;n&inodot; al!';
+                    gamesContent.innerHTML = `
+                        <div class="game-container">
+                            <h3>Hazmob FPS</h3>
+                            <p>Online FPS oyunu. Di&gbreve;er oyuncularla sava&scedil;!</p>
+                            <a href="https://www.crazygames.com/game/hazmob-fps-online-shooter" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Skillwarz</h3>
+                            <p>Beceri tabanl&inodot; sava&scedil; oyunu. Yeteneklerini g&ouml;ster!</p>
+                            <a href="https://www.crazygames.com/game/skillwarz" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Sure Shot</h3>
+                            <p>Keskin ni&scedil;anc&inodot; oyunu. Her at&inodot;&scedil;&inodot;n &ouml;nemli!</p>
+                            <a href="https://www.crazygames.com/game/sure-shot" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                    `;
+                    break;
+                case 'futbol':
+                    gamesTitle.innerHTML = 'Futbol Oyunlar&inodot;';
+                    gamesDescription.innerHTML = 'Futbol tutkunlar&inodot; i&ccedil;in en iyi oyunlar. Sahaya &ccedil;&inodot;k!';
+                    gamesContent.innerHTML = `
+                        <div class="game-container">
+                            <h3>Football Legends</h3>
+                            <p>Efsane futbolcularla oyna. Hangi tak&inodot;m&inodot; tutuyorsun?</p>
+                            <a href="https://poki.com/tr/g/football-legends" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Flick Goal</h3>
+                            <p>E&gbreve;lenceli futbol oyunu. Gol&uuml; ka&ccedil;&inodot;rma!</p>
+                            <a href="https://poki.com/tr/g/flick-goal" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                        <div class="game-container">
+                            <h3>Kix Dream Soccer</h3>
+                            <p>Hayalindeki futbolu oyna. Y&inodot;ld&inodot;z olma zaman&inodot;!</p>
+                            <a href="https://poki.com/tr/g/kix-dream-soccer" target="_blank" class="game-button">Oyna</a>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            showSection('games');
+            closeSidebar();
+        }
+
+        // Sayfa yüklendiðinde baþlatýlan fonksiyonlar
+        window.addEventListener('DOMContentLoaded', () => {
+            // Hoþ geldin animasyonu
+            setTimeout(() => {
+                if (!currentUser) {
+                    document.getElementById("loginModal").style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                } else {
+                    document.getElementById("loginModal").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                    document.body.style.overflow = "auto";
+                    showSection('anasayfa');
+                }
+            }, 500);
+
+            // Paralaks efekti
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('body::before');
+                if (parallax) {
+                    const speed = scrolled * 0.5;
+                }
+            });
+
+            // Klavye kýsayollarý
+            document.addEventListener('keydown', (e) => {
+                // Ctrl + / ile AI chat aç/kapat
+                if (e.ctrlKey && e.key === '/') {
+                    e.preventDefault();
+                    toggleAiChat();
+                }
+                
+                // ESC ile AI chat kapat
+                if (e.key === 'Escape' && aiChatOpen) {
+                    toggleAiChat();
+                }
+            });
+
+            // Performans optimizasyonu
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
+            });
+        });
+
+        // Touch events için mobil optimizasyon
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            const touchY = e.touches[0].clientY;
+            const touchDiff = touchStartY - touchY;
+            
+            // Yukarý kaydýrma ile AI chat aç
+            if (touchDiff > 100 && !aiChatOpen) {
+                toggleAiChat();
+            }
+        });
+
+        // Hata yakalama ve logging
+        window.addEventListener('error', (e) => {
+            console.error('Hata yakalandý:', e.error);
+        });
+
+        // Service Worker için PWA desteði (opsiyonel)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Service worker kaydý yapýlabilir
+            });
+        }
+
+        // Dark/Light mode toggle (gelecek özellik için hazýr)
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        // Animasyon performansý için optimize edilmiþ scroll
+        let ticking = false;
+        function updateScrollEffects() {
+            // Scroll efektleri burada
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        });
+
+        // Analytics tracking (opsiyonel)
+        function trackEvent(eventName, data) {
+            // Analytics kodu burada olabilir
+            console.log(`Event: ${eventName}`, data);
+        }
+
+        // Baþlangýç mesajlarý
+        console.log('Apex Solutions AI Powered Website Loaded!');
+        console.log('AI Chat: Sa&gbreve; alttaki butona t&inodot;klay&inodot;n veya Ctrl+/ kullan&inodot;n');
+        console.log('Games: Men&uuml;den oyunlar b&ouml;l&uuml;m&uuml;n&uuml; ke&scedil;fedin');
+        console.log('Images: Dinamik g&ouml;rsel galerilerini inceleyin');
+    </script>
+</body>
+</html>
