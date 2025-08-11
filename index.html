@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Apex Solutions - Profesyonel web &ccedil;&ouml;z&uuml;mleri ve AI asistan&iacute;">
+    <meta name="keywords" content="Apex Solution, Apex Solutions, yazÄ±lÄ±m geliÅŸtirme, web tasarÄ±m, dijital Ã§Ã¶zÃ¼mler, AI destekli yazÄ±lÄ±m">
     <title>Apex Solutions - AI Powered</title>
     <style>
         :root {
@@ -1046,7 +1047,7 @@
     </div>
 
     <script>
-        // HTML entity çözümleyici fonksiyon
+        // HTML entity Ã§Ã¶zÃ¼mleyici fonksiyon
         function decodeHtml(html) {
             const txt = document.createElement('textarea');
             txt.innerHTML = html;
@@ -1088,7 +1089,7 @@
                 "G&ouml;rseller b&ouml;l&uuml;m&uuml;nde Yenile butonu ile rastgele yeni resimler y&uuml;kleyebilirsiniz!"
             ],
             help: [
-                "Size yard&inodot;mc&inodot; olmak i&ccedil;in buray&inodot;m! &Scedil;u konularda sorular sorabilirsiniz:\n• &Scedil;irket hakk&inodot;nda\n• Hizmetlerimiz\n• Oyunlar\n• G&ouml;rseller\n• &Idot;leti&scedil;im bilgileri",
+                "Size yard&inodot;mc&inodot; olmak i&ccedil;in buray&inodot;m! &Scedil;u konularda sorular sorabilirsiniz:\nÂ• &Scedil;irket hakk&inodot;nda\nÂ• Hizmetlerimiz\nÂ• Oyunlar\nÂ• G&ouml;rseller\nÂ• &Idot;leti&scedil;im bilgileri",
                 "Men&uuml;deki t&uuml;m b&ouml;l&uuml;mler hakk&inodot;nda bilgi verebilirim. Ne &ouml;&gbreve;renmek istiyorsunuz?",
                 "Herhangi bir teknik sorun ya&scedil;&inodot;yorsan&inodot;z da bana s&ouml;yleyebilirsiniz!"
             ],
@@ -1129,17 +1130,17 @@
             
             if (!message) return;
             
-            // Kullanýcý mesajýný ekle (HTML entity olmadan)
+            // KullanÃ½cÃ½ mesajÃ½nÃ½ ekle (HTML entity olmadan)
             addMessageToChat(message, 'user');
             input.value = '';
             
-            // AI cevabýný simüle et
+            // AI cevabÃ½nÃ½ simÃ¼le et
             showTypingIndicator();
             
             setTimeout(() => {
                 const response = generateAIResponse(message);
                 hideTypingIndicator();
-                // AI yanýtýný HTML entity ile ekle
+                // AI yanÃ½tÃ½nÃ½ HTML entity ile ekle
                 addAIMessageToChat(response);
             }, Math.random() * 2000 + 1000);
         }
@@ -1148,7 +1149,7 @@
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}-message`;
-            messageDiv.textContent = message; // Kullanýcý mesajý için textContent
+            messageDiv.textContent = message; // KullanÃ½cÃ½ mesajÃ½ iÃ§in textContent
             
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1158,7 +1159,7 @@
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message ai-message';
-            messageDiv.innerHTML = htmlMessage; // AI mesajý için innerHTML
+            messageDiv.innerHTML = htmlMessage; // AI mesajÃ½ iÃ§in innerHTML
             
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1176,18 +1177,18 @@
         function generateAIResponse(userMessage) {
             const message = userMessage.toLowerCase();
             
-            // Selamlama kontrolü
+            // Selamlama kontrolÃ¼
             if (message.includes('merhaba') || message.includes('selam') || message.includes('hey') || message.includes('hi')) {
                 return getRandomResponse(aiResponses.greetings);
             }
             
-            // Þirket hakkýnda
-            if (message.includes('hakkýnda') || message.includes('þirket') || message.includes('apex')) {
+            // Ãžirket hakkÃ½nda
+            if (message.includes('hakkÃ½nda') || message.includes('Ã¾irket') || message.includes('apex')) {
                 return getRandomResponse(aiResponses.about);
             }
             
             // Hizmetler
-            if (message.includes('hizmet') || message.includes('ne yapýyorsunuz') || message.includes('service')) {
+            if (message.includes('hizmet') || message.includes('ne yapÃ½yorsunuz') || message.includes('service')) {
                 return getRandomResponse(aiResponses.services);
             }
             
@@ -1196,27 +1197,27 @@
                 return getRandomResponse(aiResponses.games);
             }
             
-            // Görseller
-            if (message.includes('resim') || message.includes('görsel') || message.includes('fotoðraf') || message.includes('image')) {
+            // GÃ¶rseller
+            if (message.includes('resim') || message.includes('gÃ¶rsel') || message.includes('fotoÃ°raf') || message.includes('image')) {
                 return getRandomResponse(aiResponses.images);
             }
             
-            // Yardým
-            if (message.includes('yardým') || message.includes('help') || message.includes('nasýl') || message.includes('ne yapabilirim')) {
+            // YardÃ½m
+            if (message.includes('yardÃ½m') || message.includes('help') || message.includes('nasÃ½l') || message.includes('ne yapabilirim')) {
                 return getRandomResponse(aiResponses.help);
             }
             
-            // Ýletiþim
-            if (message.includes('iletiþim') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
+            // ÃletiÃ¾im
+            if (message.includes('iletiÃ¾im') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
                 return "&Idot;leti&scedil;im bilgilerimiz: 0 536 799 50 89 | alperenizer07@gmail.com | &Ccedil;al&inodot;&scedil;ma saatleri: 09:00-18:00";
             }
             
-            // Teþekkür
-            if (message.includes('teþekkür') || message.includes('saðol') || message.includes('thank')) {
+            // TeÃ¾ekkÃ¼r
+            if (message.includes('teÃ¾ekkÃ¼r') || message.includes('saÃ°ol') || message.includes('thank')) {
                 return "Rica ederim! Ba&scedil;ka bir &scedil;ey i&ccedil;in yard&inodot;ma ihtiyac&inodot;n&inodot;z olursa buray&inodot;m!";
             }
             
-            // Varsayýlan cevap
+            // VarsayÃ½lan cevap
             return getRandomResponse(aiResponses.default);
         }
 
@@ -1224,7 +1225,7 @@
             return responses[Math.floor(Math.random() * responses.length)];
         }
 
-        // Menü butonu hareket fonksiyonlarý
+        // MenÃ¼ butonu hareket fonksiyonlarÃ½
         function moveMenuButtonDown() {
             const sidebarToggle = document.getElementById('sidebar-toggle');
             sidebarToggle.classList.add('moved-down');
@@ -1235,7 +1236,7 @@
             sidebarToggle.classList.remove('moved-down');
         }
 
-        // Form geçiþ fonksiyonlarý
+        // Form geÃ§iÃ¾ fonksiyonlarÃ½
         function showRegisterForm() {
             document.getElementById('loginBox').style.display = 'none';
             document.getElementById('registerBox').style.display = 'block';
@@ -1248,7 +1249,7 @@
             document.getElementById('loginError').style.display = 'none';
         }
 
-        // Kayýt olma fonksiyonu
+        // KayÃ½t olma fonksiyonu
         function registerUser() {
             const username = document.getElementById('regUsername').value.trim();
             const password = document.getElementById('regPassword').value;
@@ -1293,7 +1294,7 @@
             document.getElementById('regConfirmPassword').value = '';
         }
 
-        // Giriþ kontrol fonksiyonu
+        // GiriÃ¾ kontrol fonksiyonu
         function checkLogin() {
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
@@ -1336,7 +1337,7 @@
             alert(decodeHtml('Resim silindi!'));
         }
 
-        // Özel resim ekleme
+        // Ã–zel resim ekleme
         function addCustomImage() {
             const urlInput = document.getElementById('customImageUrl');
             const imageUrl = urlInput.value.trim();
@@ -1383,7 +1384,7 @@
             }
         }
 
-        // Resimleri güncelleme
+        // Resimleri gÃ¼ncelleme
         function updateImages() {
             const container = document.getElementById('image-container');
             container.style.opacity = '0';
@@ -1397,13 +1398,13 @@
             }, 300);
         }
 
-        // Rastgele resim seçme
+        // Rastgele resim seÃ§me
         function getRandomImages(images, count) {
             const shuffled = [...images].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
         }
 
-        // Kategori resimlerini yükleme
+        // Kategori resimlerini yÃ¼kleme
         function loadCategoryImages(category) {
             const container = document.getElementById('image-container');
             container.innerHTML = '';
@@ -1496,7 +1497,7 @@
             });
         }
 
-        // Kategori gösterme
+        // Kategori gÃ¶sterme
         function showCategory(category) {
             currentCategory = category;
             
@@ -1514,7 +1515,7 @@
             loadCategoryImages(category);
         }
 
-        // Bölüm gösterme
+        // BÃ¶lÃ¼m gÃ¶sterme
         function showSection(id) {
             const sections = document.querySelectorAll('.content > div');
             sections.forEach(section => {
@@ -1530,7 +1531,7 @@
             }
         }
         
-        // Sidebar fonksiyonlarý
+        // Sidebar fonksiyonlarÃ½
         function openSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
@@ -1551,7 +1552,7 @@
             sidebarToggle.classList.remove('open');
         }
 
-        // Oyunlarý gösterme
+        // OyunlarÃ½ gÃ¶sterme
         function showGames(category) {
             const gamesTitle = document.getElementById('games-title');
             const gamesDescription = document.getElementById('games-description');
@@ -1648,9 +1649,9 @@
             closeSidebar();
         }
 
-        // Sayfa yüklendiðinde baþlatýlan fonksiyonlar
+        // Sayfa yÃ¼klendiÃ°inde baÃ¾latÃ½lan fonksiyonlar
         window.addEventListener('DOMContentLoaded', () => {
-            // Hoþ geldin animasyonu
+            // HoÃ¾ geldin animasyonu
             setTimeout(() => {
                 if (!currentUser) {
                     document.getElementById("loginModal").style.display = "flex";
@@ -1672,9 +1673,9 @@
                 }
             });
 
-            // Klavye kýsayollarý
+            // Klavye kÃ½sayollarÃ½
             document.addEventListener('keydown', (e) => {
-                // Ctrl + / ile AI chat aç/kapat
+                // Ctrl + / ile AI chat aÃ§/kapat
                 if (e.ctrlKey && e.key === '/') {
                     e.preventDefault();
                     toggleAiChat();
@@ -1693,7 +1694,7 @@
             });
         });
 
-        // Touch events için mobil optimizasyon
+        // Touch events iÃ§in mobil optimizasyon
         let touchStartY = 0;
         document.addEventListener('touchstart', (e) => {
             touchStartY = e.touches[0].clientY;
@@ -1703,7 +1704,7 @@
             const touchY = e.touches[0].clientY;
             const touchDiff = touchStartY - touchY;
             
-            // Yukarý kaydýrma ile AI chat aç
+            // YukarÃ½ kaydÃ½rma ile AI chat aÃ§
             if (touchDiff > 100 && !aiChatOpen) {
                 toggleAiChat();
             }
@@ -1711,23 +1712,23 @@
 
         // Hata yakalama ve logging
         window.addEventListener('error', (e) => {
-            console.error('Hata yakalandý:', e.error);
+            console.error('Hata yakalandÃ½:', e.error);
         });
 
-        // Service Worker için PWA desteði (opsiyonel)
+        // Service Worker iÃ§in PWA desteÃ°i (opsiyonel)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // Service worker kaydý yapýlabilir
+                // Service worker kaydÃ½ yapÃ½labilir
             });
         }
 
-        // Dark/Light mode toggle (gelecek özellik için hazýr)
+        // Dark/Light mode toggle (gelecek Ã¶zellik iÃ§in hazÃ½r)
         function toggleTheme() {
             document.documentElement.classList.toggle('dark-theme');
             localStorage.setItem('theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
         }
 
-        // Animasyon performansý için optimize edilmiþ scroll
+        // Animasyon performansÃ½ iÃ§in optimize edilmiÃ¾ scroll
         let ticking = false;
         function updateScrollEffects() {
             // Scroll efektleri burada
@@ -1747,7 +1748,7 @@
             console.log(`Event: ${eventName}`, data);
         }
 
-        // Baþlangýç mesajlarý
+        // BaÃ¾langÃ½Ã§ mesajlarÃ½
         console.log('Apex Solutions AI Powered Website Loaded!');
         console.log('AI Chat: Sa&gbreve; alttaki butona t&inodot;klay&inodot;n veya Ctrl+/ kullan&inodot;n');
         console.log('Games: Men&uuml;den oyunlar b&ouml;l&uuml;m&uuml;n&uuml; ke&scedil;fedin');
@@ -1755,3 +1756,4 @@
     </script>
 </body>
 </html>
+
