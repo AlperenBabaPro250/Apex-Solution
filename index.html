@@ -40,6 +40,310 @@
             min-height: 100vh;
         }
 
+        /* Admin Page Styles */
+        .admin-page {
+            display: none;
+            min-height: 100vh;
+            background: var(--primary-bg);
+            color: var(--primary-text);
+            padding: 20px;
+        }
+
+        .admin-page.active {
+            display: block;
+        }
+
+        .admin-header {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .admin-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .admin-card {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .admin-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .admin-stat {
+            text-align: center;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .admin-stat .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .admin-stat .label {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .user-management {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .user-details {
+            font-size: 0.8rem;
+            color: var(--tertiary-text);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .admin-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn.primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .admin-btn.danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .admin-btn.success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary-text);
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .text-management {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .text-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .text-item label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .back-to-site {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+        }
+
+        .back-to-site:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .password-box {
+            background: var(--dark-glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 400px;
+            color: var(--primary-text);
+        }
+
+        .password-box h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            background: var(--glass-bg);
+            color: var(--primary-text);
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .password-box input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .password-box button {
+            background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .password-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .password-error {
+            color: var(--danger-color);
+            margin-top: 15px;
+            font-weight: 600;
+            display: none;
+        }
+
         /* Animated Background */
         body::before {
             content: '';
@@ -753,6 +1057,19 @@
             #sidebar {
                 width: 100vw;
             }
+
+            .admin-page .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-card {
+                padding: 15px;
+            }
+
+            .password-box {
+                width: calc(100vw - 40px);
+                margin: 0 20px;
+            }
         }
 
         /* Sub Menu */
@@ -859,208 +1176,920 @@
 </head>
 
 <body>
-    <div id="loginModal">
-        <div id="loginBox">
-            <h2>Giri&scedil; Yap</h2>
-            <input type="text" id="username" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
-            <input type="password" id="password" placeholder="&Scedil;ifre" />
-            <button onclick="checkLogin()">Giri&scedil; Yap</button>
-            <div id="loginError">Kullan&inodot;c&inodot; Ad&inodot; Veya &Scedil;ifre Hatal&inodot;!</div>
-            <a class="switch-form" onclick="showRegisterForm()">Hesab&inodot;n&inodot;z yok mu? Kay&inodot;t Olun</a>
+    <!-- Ana Site İçeriği -->
+    <div id="main-site">
+        <div id="loginModal">
+            <div id="loginBox">
+                <h2>Giri&scedil; Yap</h2>
+                <input type="text" id="username" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
+                <input type="password" id="password" placeholder="&Scedil;ifre" />
+                <button onclick="checkLogin()">Giri&scedil; Yap</button>
+                <div id="loginError">Kullan&inodot;c&inodot; Ad&inodot; Veya &Scedil;ifre Hatal&inodot;!</div>
+                <a class="switch-form" onclick="showRegisterForm()">Hesab&inodot;n&inodot;z yok mu? Kay&inodot;t Olun</a>
+            </div>
+
+            <div id="registerBox">
+                <h2>Kay&inodot;t Ol</h2>
+                <input type="text" id="regUsername" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
+                <input type="password" id="regPassword" placeholder="&Scedil;ifre" />
+                <input type="password" id="regConfirmPassword" placeholder="&Scedil;ifre Tekrar" />
+                <button onclick="registerUser()">Kay&inodot;t Ol</button>
+                <div id="registerError"></div>
+                <a class="switch-form" onclick="showLoginForm()">Zaten hesab&inodot;n&inodot;z var m&inodot;? Giri&scedil; Yap&inodot;n</a>
+            </div>
         </div>
 
-        <div id="registerBox">
-            <h2>Kay&inodot;t Ol</h2>
-            <input type="text" id="regUsername" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
-            <input type="password" id="regPassword" placeholder="&Scedil;ifre" />
-            <input type="password" id="regConfirmPassword" placeholder="&Scedil;ifre Tekrar" />
-            <button onclick="registerUser()">Kay&inodot;t Ol</button>
-            <div id="registerError"></div>
-            <a class="switch-form" onclick="showLoginForm()">Zaten hesab&inodot;n&inodot;z var m&inodot;? Giri&scedil; Yap&inodot;n</a>
+        <div id="sidebar-container" 
+             onmouseover="openSidebar()" 
+             onmouseleave="closeSidebar()">
+            <button id="sidebar-toggle">MEN&Uuml;</button>
+            <div id="sidebar">
+                <button onclick="showSection('anasayfa')">Anasayfa</button>
+                <button onclick="showSection('hakkimizda')">Hakk&inodot;m&inodot;zda</button>
+                <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
+                    <button>G&ouml;rseller</button>
+                    <div class="sub-menu">
+                        <button onclick="showCategory('teknoloji'); showSection('gorseller')">Teknoloji</button>
+                        <button onclick="showCategory('futbol'); showSection('gorseller')">Futbol</button>
+                        <button onclick="showCategory('yuzme'); showSection('gorseller')">Y&uuml;zme</button>
+                        <button onclick="showCategory('doga'); showSection('gorseller')">Do&gbreve;a</button>
+                        <button onclick="showCategory('su'); showSection('gorseller')">Su</button>
+                    </div>
+                </div>
+                <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
+                    <button>Oyunlar</button>
+                    <div class="sub-menu">
+                        <button onclick="showGames('korku')">Korku Oyunlar&inodot;</button>
+                        <button onclick="showGames('aksiyon')">Aksiyon Oyunlar&inodot;</button>
+                        <button onclick="showGames('silah')">Silah Oyunlar&inodot;</button>
+                        <button onclick="showGames('futbol')">Futbol Oyunlar&inodot;</button>
+                    </div>
+                </div>
+                <button onclick="showSection('bagis')">Ba&gbreve;&inodot;&scedil;</button>
+                <button onclick="showSection('hizmet')">M&uuml;&scedil;teri Hizmetleri</button>
+            </div>
         </div>
-    </div>
 
-    <div id="sidebar-container" 
-         onmouseover="openSidebar()" 
-         onmouseleave="closeSidebar()">
-        <button id="sidebar-toggle">MEN&Uuml;</button>
-        <div id="sidebar">
-            <button onclick="showSection('anasayfa')">Anasayfa</button>
-            <button onclick="showSection('hakkimizda')">Hakk&inodot;m&inodot;zda</button>
-            <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
-                <button>G&ouml;rseller</button>
-                <div class="sub-menu">
-                    <button onclick="showCategory('teknoloji'); showSection('gorseller')">Teknoloji</button>
-                    <button onclick="showCategory('futbol'); showSection('gorseller')">Futbol</button>
-                    <button onclick="showCategory('yuzme'); showSection('gorseller')">Y&uuml;zme</button>
-                    <button onclick="showCategory('doga'); showSection('gorseller')">Do&gbreve;a</button>
-                    <button onclick="showCategory('su'); showSection('gorseller')">Su</button>
+        <!-- AI Chat Toggle Button -->
+        <button id="ai-toggle" onclick="toggleAiChat()">AI</button>
+
+        <!-- AI Chat Window -->
+        <div id="ai-chat">
+            <div id="chat-header">
+                <h3>AI Asistan&inodot;</h3>
+                <button id="chat-close" onclick="toggleAiChat()">X</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message ai-message">
+                    Merhaba! Ben Apex AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?
                 </div>
             </div>
-            <div class="has-sub-menu" onmouseenter="moveMenuButtonDown()" onmouseleave="moveMenuButtonUp()">
-                <button>Oyunlar</button>
-                <div class="sub-menu">
-                    <button onclick="showGames('korku')">Korku Oyunlar&inodot;</button>
-                    <button onclick="showGames('aksiyon')">Aksiyon Oyunlar&inodot;</button>
-                    <button onclick="showGames('silah')">Silah Oyunlar&inodot;</button>
-                    <button onclick="showGames('futbol')">Futbol Oyunlar&inodot;</button>
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-            <button onclick="showSection('bagis')">Ba&gbreve;&inodot;&scedil;</button>
-            <button onclick="showSection('hizmet')">M&uuml;&scedil;teri Hizmetleri</button>
-        </div>
-    </div>
-
-    <!-- AI Chat Toggle Button -->
-    <button id="ai-toggle" onclick="toggleAiChat()">AI</button>
-
-    <!-- AI Chat Window -->
-    <div id="ai-chat">
-        <div id="chat-header">
-            <h3>AI Asistan&inodot;</h3>
-            <button id="chat-close" onclick="toggleAiChat()">X</button>
-        </div>
-        <div id="chat-messages">
-            <div class="message ai-message">
-                Merhaba! Ben Apex AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Mesaj&inodot;n&inodot;z&inodot; yaz&inodot;n..." onkeypress="handleChatInput(event)">
+                <button id="send-btn" onclick="sendMessage()">></button>
             </div>
         </div>
-        <div class="typing-indicator" id="typing-indicator">
-            <div class="typing-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+
+        <div id="main-content">
+            <header>
+                <h1>Apex Solutions</h1>
+                <p style="font-size: 1.2rem; margin-top: 10px; color: var(--secondary-text);">AI Destekli Web &Ccedil;&ouml;z&uuml;mleri</p>
+            </header>
+
+            <div class="brand-text">
+                by AlperenBabaPro250 AI Powered
             </div>
-        </div>
-        <div id="chat-input-container">
-            <input type="text" id="chat-input" placeholder="Mesaj&inodot;n&inodot;z&inodot; yaz&inodot;n..." onkeypress="handleChatInput(event)">
-            <button id="send-btn" onclick="sendMessage()">></button>
-        </div>
-    </div>
 
-    <div id="main-content">
-        <header>
-            <h1>Apex Solutions</h1>
-            <p style="font-size: 1.2rem; margin-top: 10px; color: var(--secondary-text);">AI Destekli Web &Ccedil;&ouml;z&uuml;mleri</p>
-        </header>
-
-        <div class="brand-text">
-            by AlperenBabaPro250 AI Powered
-        </div>
-
-        <div class="content">
-            <div id="anasayfa">
-                <h2>Apex Solutions'a Ho&scedil; Geldiniz!</h2>
-                <p>Yapay zeka destekli profesyonel web &ccedil;&ouml;z&uuml;mleri sunan &scedil;irketimiz, i&scedil;letmenizin dijital varl&inodot;&gbreve;&inodot;n&inodot; g&uuml;&ccedil;lendirmek i&ccedil;in burada. Yenilik&ccedil;i tasar&inodot;mlar, kullan&inodot;c&inodot; dostu aray&uuml;zler ve ak&inodot;ll&inodot; AI asistan&inodot;m&inodot;zla markan&inodot;z&inodot; &ouml;ne &ccedil;&inodot;kar&inodot;yoruz.</p>
-                <p><strong>Yeni &Ouml;zellik:</strong> Sa&gbreve; alttaki AI asistan&inodot;m&inodot;zla konu&scedil;arak sitemizdeki t&uuml;m &ouml;zellikler hakk&inodot;nda bilgi alabilir, sorular&inodot;n&inodot;z&inodot; sorabilirsiniz!</p>
-                <p>Hizmetlerimiz hakk&inodot;nda daha fazla bilgi edinmek i&ccedil;in men&uuml;y&uuml; kullanabilir veya AI asistan&inodot;m&inodot;zla sohbet edebilirsiniz.</p>
-                
-                <div class="premium-features">
-                    <h3>Premium &Ouml;zellikler</h3>
-                    <ul>
-                        <li>AI Destekli 24/7 M&uuml;&scedil;teri Deste&gbreve;i</li>
-                        <li>Dinamik G&ouml;rsel Galeriler</li>
-                        <li>Interaktif Oyun Platformu</li>
-                        <li>Modern Glassmorphism Tasar&inodot;m</li>
-                        <li>Mobil Uyumlu Responsive Yap&inodot;</li>
-                    </ul>
+            <div class="content">
+                <div id="anasayfa">
+                    <h2>Apex Solutions'a Ho&scedil; Geldiniz!</h2>
+                    <p>Yapay zeka destekli profesyonel web &ccedil;&ouml;z&uuml;mleri sunan &scedil;irketimiz, i&scedil;letmenizin dijital varl&inodot;&gbreve;&inodot;n&inodot; g&uuml;&ccedil;lendirmek i&ccedil;in burada. Yenilik&ccedil;i tasar&inodot;mlar, kullan&inodot;c&inodot; dostu aray&uuml;zler ve ak&inodot;ll&inodot; AI asistan&inodot;m&inodot;zla markan&inodot;z&inodot; &ouml;ne &ccedil;&inodot;kar&inodot;yoruz.</p>
+                    <p><strong>Yeni &Ouml;zellik:</strong> Sa&gbreve; alttaki AI asistan&inodot;m&inodot;zla konu&scedil;arak sitemizdeki t&uuml;m &ouml;zellikler hakk&inodot;nda bilgi alabilir, sorular&inodot;n&inodot;z&inodot; sorabilirsiniz!</p>
+                    <p>Hizmetlerimiz hakk&inodot;nda daha fazla bilgi edinmek i&ccedil;in men&uuml;y&uuml; kullanabilir veya AI asistan&inodot;m&inodot;zla sohbet edebilirsiniz.</p>
+                    
+                    <div class="premium-features">
+                        <h3>Premium &Ouml;zellikler</h3>
+                        <ul>
+                            <li>AI Destekli 24/7 M&uuml;&scedil;teri Deste&gbreve;i</li>
+                            <li>Dinamik G&ouml;rsel Galeriler</li>
+                            <li>Interaktif Oyun Platformu</li>
+                            <li>Modern Glassmorphism Tasar&inodot;m</li>
+                            <li>Mobil Uyumlu Responsive Yap&inodot;</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div id="hakkimizda" class="hidden">
-                <h2>Hakk&inodot;m&inodot;zda</h2>
-                <p>Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; bir web geli&scedil;tirme ve dijital &ccedil;&ouml;z&uuml;mler &scedil;irketidir. M&uuml;&scedil;terilerimize &ouml;zel &ccedil;&ouml;z&uuml;mler sunarak i&scedil;letmelerinin dijital d&uuml;nyada ba&scedil;ar&inodot;l&inodot; olmalar&inodot;n&inodot; sa&gbreve;l&inodot;yoruz.</p>
-                
-                <div class="grid-container">
-                    <div class="grid-item accent">
-                        <h3>Vizyonumuz</h3>
-                        <p>Teknolojinin g&uuml;c&uuml;n&uuml; kullanarak m&uuml;&scedil;terilerimizin i&scedil; s&uuml;re&ccedil;lerini kolayla&scedil;t&inodot;rmak ve dijital d&ouml;n&uuml;&scedil;&uuml;mlerine liderlik etmek. AI teknolojileri ile gelece&gbreve;in web &ccedil;&ouml;z&uuml;mlerini bug&uuml;nden sunmak.</p>
+                <div id="hakkimizda" class="hidden">
+                    <h2>Hakk&inodot;m&inodot;zda</h2>
+                    <p>Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; bir web geli&scedil;tirme ve dijital &ccedil;&ouml;z&uuml;mler &scedil;irketidir. M&uuml;&scedil;terilerimize &ouml;zel &ccedil;&ouml;z&uuml;mler sunarak i&scedil;letmelerinin dijital d&uuml;nyada ba&scedil;ar&inodot;l&inodot; olmalar&inodot;n&inodot; sa&gbreve;l&inodot;yoruz.</p>
+                    
+                    <div class="grid-container">
+                        <div class="grid-item accent">
+                            <h3>Vizyonumuz</h3>
+                            <p>Teknolojinin g&uuml;c&uuml;n&uuml; kullanarak m&uuml;&scedil;terilerimizin i&scedil; s&uuml;re&ccedil;lerini kolayla&scedil;t&inodot;rmak ve dijital d&ouml;n&uuml;&scedil;&uuml;mlerine liderlik etmek. AI teknolojileri ile gelece&gbreve;in web &ccedil;&ouml;z&uuml;mlerini bug&uuml;nden sunmak.</p>
+                        </div>
+                        
+                        <div class="grid-item pink">
+                            <h3>Misyonumuz</h3>
+                            <p>Yenilik&ccedil;i, kullan&inodot;c&inodot; dostu ve etkili web &ccedil;&ouml;z&uuml;mleri sunarak m&uuml;&scedil;teri memnuniyetini en &uuml;st seviyede tutmak. AI destekli hizmetlerle sekt&ouml;rde &ouml;nc&uuml; olmak.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; text-align: center;">
+                        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Ekibimiz</h3>
+                        <p>Deneyimli yaz&inodot;l&inodot;m geli&scedil;tiriciler, UI/UX tasar&inodot;mc&inodot;lar ve AI uzmanlar&inodot;ndan olu&scedil;an ekibimizle projelerinizi hayata ge&ccedil;iriyoruz.</p>
+                    </div>
+                </div>
+
+                <div id="gorseller" class="hidden">
+                    <h2 id="gorsel-baslik">G&ouml;rseller
+                        <button class="update-btn" onclick="updateImages()">Yenile</button>
+                    </h2>
+                    <p id="gorsel-aciklama">AlperenBabaPro250 taraf&inodot;ndan &ouml;zenle se&ccedil;ilmi&scedil; ve tasar&inodot;m&inodot;&scedil; kaliteli g&ouml;rseller koleksiyonu ile projelerinize ilham kat&inodot;n. AI asistan&inodot;m&inodot;zdan g&ouml;rsel &ouml;nerileri de alabilirsiniz!</p>
+
+                    <div id="image-container">
                     </div>
                     
-                    <div class="grid-item pink">
-                        <h3>Misyonumuz</h3>
-                        <p>Yenilik&ccedil;i, kullan&inodot;c&inodot; dostu ve etkili web &ccedil;&ouml;z&uuml;mleri sunarak m&uuml;&scedil;teri memnuniyetini en &uuml;st seviyede tutmak. AI destekli hizmetlerle sekt&ouml;rde &ouml;nc&uuml; olmak.</p>
+                    <div class="custom-image-section">
+                        <h3>&Ouml;zel Proje Ekleyin</h3>
+                        <input type="url" class="custom-image-input" id="customImageUrl" placeholder="Resim URL&apos;sini buraya yap&inodot;&scedil;t&inodot;r&inodot;n...">
+                        <button class="add-image-btn" onclick="addCustomImage()">Resmi Ekle</button>
                     </div>
                 </div>
 
-                <div style="margin-top: 30px; text-align: center;">
-                    <h3 style="color: var(--accent-color); margin-bottom: 20px;">Ekibimiz</h3>
-                    <p>Deneyimli yaz&inodot;l&inodot;m geli&scedil;tiriciler, UI/UX tasar&inodot;mc&inodot;lar ve AI uzmanlar&inodot;ndan olu&scedil;an ekibimizle projelerinizi hayata ge&ccedil;iriyoruz.</p>
-                </div>
-            </div>
-
-            <div id="gorseller" class="hidden">
-                <h2 id="gorsel-baslik">G&ouml;rseller
-                    <button class="update-btn" onclick="updateImages()">Yenile</button>
-                </h2>
-                <p id="gorsel-aciklama">AlperenBabaPro250 taraf&inodot;ndan &ouml;zenle se&ccedil;ilmi&scedil; ve tasar&inodot;m&inodot;&scedil; kaliteli g&ouml;rseller koleksiyonu ile projelerinize ilham kat&inodot;n. AI asistan&inodot;m&inodot;zdan g&ouml;rsel &ouml;nerileri de alabilirsiniz!</p>
-
-                <div id="image-container">
-                </div>
-                
-                <div class="custom-image-section">
-                    <h3>&Ouml;zel Proje Ekleyin</h3>
-                    <input type="url" class="custom-image-input" id="customImageUrl" placeholder="Resim URL'sini buraya yap&inodot;&scedil;t&inodot;r&inodot;n...">
-                    <button class="add-image-btn" onclick="addCustomImage()">Resmi Ekle</button>
-                </div>
-            </div>
-
-            <div id="bagis" class="hidden">
-                <h2>Ba&gbreve;&inodot;&scedil;</h2>
-                <div class="grid-item green">
-                    <p>Open source projelerimize ve AI geli&scedil;tirmelerimize destek olmak isterseniz ileti&scedil;ime ge&ccedil;in:</p>
-                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 15px;">0 505 606 91 20</p>
-                    <p style="margin-top: 15px; color: var(--secondary-text);">Destekleriniz sayesinde daha g&uuml;&ccedil;l&uuml; AI &ouml;zellikler geli&scedil;tirmeye devam ediyoruz!</p>
-                </div>
-            </div>
-
-            <div id="hizmet" class="hidden">
-                <h2>M&uuml;&scedil;teri Hizmetleri</h2>
-                <div class="grid-container">
-                    <div class="grid-item accent">
-                        <h3>&Idot;leti&scedil;im</h3>
-                        <p><strong>Telefon:</strong> 0 536 799 50 89</p>
-                        <p><strong>E-posta:</strong> alperenizer07@gmail.com</p>
-                        <p><strong>&Ccedil;al&inodot;&scedil;ma Saatleri:</strong> Hafta i&ccedil;i 09:00 - 18:00</p>
-                    </div>
-                    
-                    <div class="grid-item pink">
-                        <h3>AI Destek</h3>
-                        <p>7/24 aktif AI asistan&inodot;m&inodot;z size an&inodot;nda yard&inodot;m edebilir!</p>
-                        <p style="margin-top: 10px;">Sa&gbreve; alttaki chat butonuna t&inodot;klayarak hemen ba&scedil;layabilirsiniz.</p>
+                <div id="bagis" class="hidden">
+                    <h2>Ba&gbreve;&inodot;&scedil;</h2>
+                    <div class="grid-item green">
+                        <p>Open source projelerimize ve AI geli&scedil;tirmelerimize destek olmak isterseniz ileti&scedil;ime ge&ccedil;in:</p>
+                        <p style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 15px;">0 505 606 91 20</p>
+                        <p style="margin-top: 15px; color: var(--secondary-text);">Destekleriniz sayesinde daha g&uuml;&ccedil;l&uuml; AI &ouml;zellikler geli&scedil;tirmeye devam ediyoruz!</p>
                     </div>
                 </div>
+
+                <div id="hizmet" class="hidden">
+                    <h2>M&uuml;&scedil;teri Hizmetleri</h2>
+                    <div class="grid-container">
+                        <div class="grid-item accent">
+                            <h3>&Idot;leti&scedil;im</h3>
+                            <p><strong>Telefon:</strong> 0 536 799 50 89</p>
+                            <p><strong>E-posta:</strong> alperenizer07@gmail.com</p>
+                            <p><strong>&Ccedil;al&inodot;&scedil;ma Saatleri:</strong> Hafta i&ccedil;i 09:00 - 18:00</p>
+                        </div>
+                        
+                        <div class="grid-item pink">
+                            <h3>AI Destek</h3>
+                            <p>7/24 aktif AI asistan&inodot;m&inodot;z size an&inodot;nda yard&inodot;m edebilir!</p>
+                            <p style="margin-top: 10px;">Sa&gbreve; alttaki chat butonuna t&inodot;klayarak hemen ba&scedil;layabilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="games" class="hidden">
+                    <h2 id="games-title"></h2>
+                    <p id="games-description"></p>
+                    <div id="games-content"></div>
+                </div>
             </div>
 
-            <div id="games" class="hidden">
-                <h2 id="games-title"></h2>
-                <p id="games-description"></p>
-                <div id="games-content"></div>
-            </div>
+            <footer>
+                <p>&copy; 2025 Apex Solutions - T&uuml;m Haklar&inodot; Sakl&inodot;d&inodot;r.</p>
+                <p style="margin-top: 10px; color: var(--accent-color);">AI Powered &bull; Future Ready &bull; Innovation First</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Admin Sayfası (Gizli) -->
+    <div id="admin-page" class="admin-page">
+        <button class="back-to-site" onclick="goToMainSite()">&larr; Siteye D&ouml;n</button>
+        
+        <div class="admin-header">
+            <h1>Apex Solutions Admin</h1>
+            <p>Site y&ouml;netim paneli - Tam yetkili y&ouml;netim</p>
         </div>
 
-        <footer>
-            <p>&copy; 2025 Apex Solutions - T&uuml;m Haklar&inodot; Sakl&inodot;d&inodot;r.</p>
-            <p style="margin-top: 10px; color: var(--accent-color);">AI Powered &bull; Future Ready &bull; Innovation First</p>
-        </footer>
+        <div class="admin-container">
+            <!-- İstatistikler -->
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>Sistem &Idot;statistikleri</h3>
+                    <div class="admin-stats">
+                        <div class="admin-stat">
+                            <div class="number" id="admin-total-users">0</div>
+                            <div class="label">Toplam Kullan&inodot;c&inodot;</div>
+                        </div>
+                        <div class="admin-stat">
+                            <div class="number" id="admin-online-users">0</div>
+                            <div class="label">&Ccedil;evrimi&ccedil;i</div>
+                        </div>
+                        <div class="admin-stat">
+                            <div class="number" id="admin-total-images">0</div>
+                            <div class="label">Toplam G&ouml;rsel</div>
+                        </div>
+                        <div class="admin-stat">
+                            <div class="number" id="admin-ai-chats">0</div>
+                            <div class="label">AI Sohbet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3>H&inodot;zl&inodot; &Idot;&scedil;lemler</h3>
+                    <div class="quick-actions">
+                        <button class="admin-btn primary" onclick="adminClearAllData()">T&uuml;m Verileri Temizle</button>
+                        <button class="admin-btn success" onclick="adminExportData()">Verileri D&inodot;&scedil;a Aktar</button>
+                        <button class="admin-btn primary" onclick="adminBackupSystem()">Sistem Yede&gbreve;i Al</button>
+                        <button class="admin-btn danger" onclick="adminResetSystem()">Sistemi S&inodot;f&inodot;rla</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kullanıcı Yönetimi -->
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>Kullan&inodot;c&inodot; Y&ouml;netimi</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="admin-search-user" placeholder="Kullan&inodot;c&inodot; ara...">
+                        <button class="admin-btn primary" onclick="adminSearchUser()" style="margin-top: 10px; width: 100%;">Ara</button>
+                    </div>
+                    
+                    <div class="user-management">
+                        <div id="admin-user-list">
+                            <!-- Kullan&inodot;c&inodot;lar buraya eklenecek -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="admin-btn primary" onclick="adminAddTestUser()" style="width: 100%;">Test Kullan&inodot;c&inodot;s&inodot; Ekle</button>
+                        <button class="admin-btn danger" onclick="adminDeleteAllUsers()" style="width: 100%; margin-top: 10px;">T&uuml;m Kullan&inodot;c&inodot;lar&inodot; Sil</button>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Yeni Kullan&inodot;c&inodot; Ekle</h3>
+                    <div class="form-group">
+                        <label>Kullan&inodot;c&inodot; Ad&inodot;</label>
+                        <input type="text" class="form-control" id="admin-new-username" placeholder="Kullan&inodot;c&inodot; ad&inodot;">
+                    </div>
+                    <div class="form-group">
+                        <label>&Scedil;ifre</label>
+                        <input type="password" class="form-control" id="admin-new-password" placeholder="&Scedil;ifre">
+                    </div>
+                    <div class="form-group">
+                        <label>&Scedil;ifre Tekrar</label>
+                        <input type="password" class="form-control" id="admin-new-password-confirm" placeholder="&Scedil;ifre tekrar">
+                    </div>
+                    <button class="admin-btn success" onclick="adminCreateUser()" style="width: 100%;">Kullan&inodot;c&inodot; Olu&scedil;tur</button>
+                </div>
+            </div>
+
+            <!-- İçerik Yönetimi -->
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>Site &Idot;&ccedil;eri&gbreve;i</h3>
+                    <div class="form-group">
+                        <label>Site Ba&scedil;l&inodot;&gbreve;&inodot;</label>
+                        <input type="text" class="form-control" id="admin-site-title" placeholder="Site ba&scedil;l&inodot;&gbreve;&inodot;">
+                    </div>
+                    <div class="form-group">
+                        <label>Site A&ccedil;&inodot;klamas&inodot;</label>
+                        <textarea class="form-control" id="admin-site-description" placeholder="Site a&ccedil;&inodot;klamas&inodot;" rows="3"></textarea>
+                    </div>
+                    <button class="admin-btn primary" onclick="adminUpdateSiteInfo()" style="width: 100%;">Site Bilgilerini G&uuml;ncelle</button>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Metin Y&ouml;netimi</h3>
+                    <div class="text-management" id="text-management">
+                        <!-- Dinamik olarak t&uuml;m metinler buraya eklenecek -->
+                    </div>
+                    <button class="admin-btn primary" onclick="adminSaveAllTexts()" style="width: 100%; margin-top: 15px;">T&uuml;m Metinleri Kaydet</button>
+                </div>
+            </div>
+
+            <!-- Görsel Yönetimi -->
+            <div class="admin-card">
+                <h3>G&ouml;rsel Y&ouml;netimi</h3>
+                <div class="admin-grid">
+                    <div class="form-group">
+                        <label>&Ouml;zel G&ouml;rsel URL</label>
+                        <input type="url" class="form-control" id="admin-image-url" placeholder="G&ouml;rsel URL&apos;si">
+                        <button class="admin-btn primary" onclick="adminAddCustomImage()" style="width: 100%; margin-top: 10px;">G&ouml;rsel Ekle</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Toplu &Idot;&scedil;lemler</label>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="admin-btn primary" onclick="adminAddSampleImages()">&Ouml;rnek G&ouml;rsel Ekle</button>
+                            <button class="admin-btn danger" onclick="adminClearAllImages()">T&uuml;m G&ouml;rselleri Temizle</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="admin-image-preview" style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">
+                    <!-- G&ouml;rsel &ouml;nizlemeleri buraya eklenecek -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Şifre Modal -->
+    <div id="adminPasswordModal" class="password-modal" style="display: none;">
+        <div class="password-box">
+            <h2>Admin Giri&scedil;i</h2>
+            <input type="password" id="adminPasswordInput" placeholder="Admin &scedil;ifresini girin">
+            <button onclick="checkAdminPassword()">Giri&scedil; Yap</button>
+            <div class="password-error" id="adminPasswordError">Ge&ccedil;ersiz &scedil;ifre!</div>
+        </div>
     </div>
 
     <script>
-        // HTML entity çözümleyici fonksiyon
+        // Admin şifresi
+        const ADMIN_PASSWORD = "Gulay_Alperen***/***";
+
+        // URL kontrolü için fonksiyon
+        function checkURLForAdmin() {
+            if (window.location.hash === '#admin') {
+                showAdminPasswordModal();
+            }
+        }
+
+        // Admin şifre modalını göster
+        function showAdminPasswordModal() {
+            document.getElementById('adminPasswordModal').style.display = 'flex';
+        }
+
+        // Admin şifresini kontrol et
+        function checkAdminPassword() {
+            const password = document.getElementById('adminPasswordInput').value;
+            const errorElement = document.getElementById('adminPasswordError');
+            
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('adminPasswordModal').style.display = 'none';
+                showAdminPage();
+            } else {
+                errorElement.style.display = 'block';
+                document.getElementById('adminPasswordInput').value = '';
+            }
+        }
+
+        // Admin sayfasını göster
+        function showAdminPage() {
+            document.getElementById('main-site').style.display = 'none';
+            document.getElementById('admin-page').classList.add('active');
+            loadAdminPageData();
+        }
+
+        // Ana siteye dön
+        function goToMainSite() {
+            document.getElementById('main-site').style.display = 'block';
+            document.getElementById('admin-page').classList.remove('active');
+            // URL'den hash'i kaldır
+            history.replaceState(null, null, ' ');
+        }
+
+        // Metin elementlerine ID atama
+        function assignTextIds() {
+            let headingIndex = 0;
+            let paragraphIndex = 0;
+            let listItemIndex = 0;
+            let buttonIndex = 0;
+
+            // Başlıklar
+            document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((el) => {
+                if (el.textContent.trim() && !el.querySelector('button') && !el.closest('.admin-page')) {
+                    if (!el.hasAttribute('data-text-id')) {
+                        el.setAttribute('data-text-id', `heading-${headingIndex++}`);
+                    }
+                }
+            });
+
+            // Paragraflar
+            document.querySelectorAll('p').forEach((el) => {
+                if (el.textContent.trim() && !el.closest('.admin-page')) {
+                    if (!el.hasAttribute('data-text-id')) {
+                        el.setAttribute('data-text-id', `paragraph-${paragraphIndex++}`);
+                    }
+                }
+            });
+
+            // Listeler
+            document.querySelectorAll('li').forEach((el) => {
+                if (el.textContent.trim() && !el.closest('.admin-page')) {
+                    if (!el.hasAttribute('data-text-id')) {
+                        el.setAttribute('data-text-id', `listitem-${listItemIndex++}`);
+                    }
+                }
+            });
+
+            // Butonlar
+            document.querySelectorAll('button').forEach((el) => {
+                if (el.textContent.trim() && !el.classList.contains('admin-btn') && !el.classList.contains('delete-btn') && !el.closest('.admin-page')) {
+                    if (!el.hasAttribute('data-text-id')) {
+                        el.setAttribute('data-text-id', `button-${buttonIndex++}`);
+                    }
+                }
+            });
+        }
+
+        // Orijinal metinleri kaydet
+        function saveOriginalTexts() {
+            const originalTexts = {};
+            document.querySelectorAll('[data-text-id]').forEach((el) => {
+                originalTexts[el.getAttribute('data-text-id')] = el.innerHTML;
+            });
+            localStorage.setItem('originalTexts', JSON.stringify(originalTexts));
+        }
+
+        // Kaydedilmiş metinleri yükle
+        function loadSavedTexts() {
+            const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
+            Object.keys(savedTexts).forEach((id) => {
+                const el = document.querySelector(`[data-text-id="${id}"]`);
+                if (el) {
+                    el.innerHTML = savedTexts[id];
+                }
+            });
+        }
+
+        // Kaldırılmış elementleri yükle
+        function loadRemovedElements() {
+            const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
+            removedElements.forEach((id) => {
+                const el = document.querySelector(`[data-text-id="${id}"]`);
+                if (el) {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        // Admin sayfası verilerini yükle
+        function loadAdminPageData() {
+            // Kullanıcı verileri
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            document.getElementById('admin-total-users').textContent = users.length;
+            document.getElementById('admin-online-users').textContent = users.filter(user => user.lastLogin).length;
+            
+            // Görsel sayısı
+            const imageContainers = document.querySelectorAll('.image-wrapper');
+            document.getElementById('admin-total-images').textContent = imageContainers.length;
+            
+            // AI sohbet sayısı
+            document.getElementById('admin-ai-chats').textContent = Math.floor(Math.random() * 50) + 10;
+            
+            // Kullanıcı listesini güncelle
+            updateAdminUserList();
+            
+            // Mevcut site bilgilerini yükle
+            loadCurrentSiteInfo();
+            
+            // Görsel önizlemeleri yükle
+            updateImagePreviews();
+            
+            // Tüm metinleri yükle
+            loadAllTexts();
+        }
+
+        // Tüm metinleri admin panele yükle
+        function loadAllTexts() {
+            const textManagement = document.getElementById('text-management');
+            textManagement.innerHTML = '';
+            
+            const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
+            const elements = document.querySelectorAll('[data-text-id]');
+            
+            elements.forEach((el) => {
+                const id = el.getAttribute('data-text-id');
+                if (!removedElements.includes(id) && !el.closest('.admin-page')) {
+                    const type = el.tagName.toLowerCase();
+                    const textItem = document.createElement('div');
+                    textItem.className = 'text-item';
+                    textItem.innerHTML = `
+                        <label>${type.toUpperCase()} - ${id}</label>
+                        <textarea 
+                            class="form-control text-content" 
+                            data-id="${id}"
+                            rows="3"
+                            placeholder="Metin i&ccedil;eri&gbreve;i"
+                        >${el.innerHTML}</textarea>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="admin-btn primary" onclick="updateTextElement('${id}')" style="padding: 5px 10px; font-size: 12px;">G&uuml;ncelle</button>
+                            <button class="admin-btn danger" onclick="removeTextElement('${id}')" style="padding: 5px 10px; font-size: 12px;">Kald&inodot;r</button>
+                            <button class="admin-btn" onclick="resetTextElement('${id}')" style="padding: 5px 10px; font-size: 12px;">S&inodot;f&inodot;rla</button>
+                        </div>
+                    `;
+                    textManagement.appendChild(textItem);
+                }
+            });
+        }
+
+        // Tekil metin elementini güncelle
+        function updateTextElement(elementId) {
+            const textarea = document.querySelector(`.text-content[data-id="${elementId}"]`);
+            const newText = textarea.value;
+            
+            const el = document.querySelector(`[data-text-id="${elementId}"]`);
+            if (el) {
+                el.innerHTML = newText;
+                saveTextToLocalStorage(elementId, newText);
+                alert('Metin g&uuml;ncellendi!');
+            }
+        }
+
+        // Metni localStorage'a kaydet
+        function saveTextToLocalStorage(elementId, text) {
+            const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
+            savedTexts[elementId] = text;
+            localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
+        }
+
+        // Metin elementini kaldır
+        function removeTextElement(elementId) {
+            if (confirm('Bu metni kald&inodot;rmak istedi&gbreve;inizden emin misiniz?')) {
+                const el = document.querySelector(`[data-text-id="${elementId}"]`);
+                if (el) {
+                    el.style.display = 'none';
+                    const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
+                    if (!removedElements.includes(elementId)) {
+                        removedElements.push(elementId);
+                    }
+                    localStorage.setItem('removedElements', JSON.stringify(removedElements));
+                    
+                    const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
+                    delete savedTexts[elementId];
+                    localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
+                    
+                    loadAllTexts();
+                    alert('Metin kald&inodot;r&inodot;ld&inodot;!');
+                }
+            }
+        }
+
+        // Metin elementini sıfırla
+        function resetTextElement(elementId) {
+            const originalTexts = JSON.parse(localStorage.getItem('originalTexts')) || {};
+            const el = document.querySelector(`[data-text-id="${elementId}"]`);
+            if (el && originalTexts[elementId]) {
+                el.innerHTML = originalTexts[elementId];
+                el.style.display = '';
+                
+                const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
+                delete savedTexts[elementId];
+                localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
+                
+                const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
+                const updatedRemoved = removedElements.filter(id => id !== elementId);
+                localStorage.setItem('removedElements', JSON.stringify(updatedRemoved));
+                
+                loadAllTexts();
+                alert('Metin s&inodot;f&inodot;rland&inodot;!');
+            }
+        }
+
+        // Tüm metinleri toplu kaydet
+        function adminSaveAllTexts() {
+            const textareas = document.querySelectorAll('.text-content');
+            textareas.forEach(textarea => {
+                const elementId = textarea.getAttribute('data-id');
+                const newText = textarea.value;
+                const el = document.querySelector(`[data-text-id="${elementId}"]`);
+                if (el) {
+                    el.innerHTML = newText;
+                    saveTextToLocalStorage(elementId, newText);
+                }
+            });
+            alert('T&uuml;m metinler kaydedildi!');
+        }
+
+        // Admin kullanıcı listesini güncelle
+        function updateAdminUserList() {
+            const userList = document.getElementById('admin-user-list');
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            userList.innerHTML = '';
+            
+            if (users.length === 0) {
+                userList.innerHTML = '<div style="text-align: center; color: var(--tertiary-text); padding: 20px;">Hen&uuml;z kullan&inodot;c&inodot; bulunmuyor</div>';
+                return;
+            }
+            
+            users.forEach(user => {
+                const userItem = document.createElement('div');
+                userItem.className = 'user-item';
+                userItem.innerHTML = `
+                    <div class="user-info">
+                        <div class="user-name">${user.username}</div>
+                        <div class="user-details">Son giri&scedil;: ${user.lastLogin || 'Bilinmiyor'}</div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="admin-btn primary" onclick="adminEditUser('${user.username}')">D&uuml;zenle</button>
+                        <button class="admin-btn danger" onclick="adminDeleteUser('${user.username}')">Sil</button>
+                    </div>
+                `;
+                userList.appendChild(userItem);
+            });
+        }
+
+        // Mevcut site bilgilerini yükle
+        function loadCurrentSiteInfo() {
+            // Site başlığı ve açıklaması
+            const headerTitle = document.querySelector('header h1');
+            const metaDescription = document.querySelector('meta[name="description"]');
+            
+            if (headerTitle) {
+                document.getElementById('admin-site-title').value = headerTitle.textContent;
+            }
+            
+            if (metaDescription) {
+                document.getElementById('admin-site-description').value = metaDescription.getAttribute('content');
+            }
+        }
+
+        // Görsel önizlemelerini güncelle
+        function updateImagePreviews() {
+            const previewContainer = document.getElementById('admin-image-preview');
+            const images = document.querySelectorAll('.image-wrapper img');
+            
+            previewContainer.innerHTML = '';
+            
+            if (images.length === 0) {
+                previewContainer.innerHTML = '<div style="text-align: center; color: var(--tertiary-text); padding: 20px; grid-column: 1 / -1;">Hen&uuml;z g&ouml;rsel bulunmuyor</div>';
+                return;
+            }
+            
+            images.forEach((img, index) => {
+                const preview = document.createElement('div');
+                preview.style.position = 'relative';
+                preview.style.borderRadius = '8px';
+                preview.style.overflow = 'hidden';
+                preview.style.border = '1px solid var(--border-color)';
+                preview.innerHTML = `
+                    <img src="${img.src}" style="width: 100%; height: 100px; object-fit: cover;">
+                    <button class="admin-btn danger" onclick="adminDeleteImage(${index})" 
+                            style="position: absolute; top: 5px; right: 5px; padding: 2px 6px; font-size: 12px;">X</button>
+                `;
+                previewContainer.appendChild(preview);
+            });
+        }
+
+        // Admin işlevleri
+        function adminClearAllData() {
+            if (confirm('T&Uuml;M veriler silinecek! Emin misiniz?')) {
+                localStorage.clear();
+                alert('T&uuml;m veriler temizlendi!');
+                loadAdminPageData();
+            }
+        }
+
+        function adminExportData() {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const dataStr = JSON.stringify(users, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'apex-solutions-backup.json';
+            link.click();
+            
+            alert('Veriler ba&scedil;ar&inodot;yla d&inodot;&scedil;a aktar&inodot;ld&inodot;!');
+        }
+
+        function adminBackupSystem() {
+            const backupData = {
+                users: JSON.parse(localStorage.getItem('users')) || [],
+                timestamp: new Date().toLocaleString(),
+                stats: {
+                    totalUsers: document.getElementById('admin-total-users').textContent,
+                    totalImages: document.getElementById('admin-total-images').textContent
+                }
+            };
+            
+            localStorage.setItem('systemBackup', JSON.stringify(backupData));
+            alert(`Sistem yede&gbreve;i al&inodot;nd&inodot;: ${backupData.timestamp}`);
+        }
+
+        function adminResetSystem() {
+            if (confirm('S&Idot;STEM SIFIRLANACAK! T&uuml;m veriler kaybolacak. Emin misiniz?')) {
+                localStorage.clear();
+                sessionStorage.clear();
+                alert('Sistem s&inodot;f&inodot;rland&inodot;! Sayfa yeniden y&uuml;klenecek.');
+                location.reload();
+            }
+        }
+
+        function adminSearchUser() {
+            const searchTerm = document.getElementById('admin-search-user').value.toLowerCase();
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const filteredUsers = users.filter(user => 
+                user.username.toLowerCase().includes(searchTerm)
+            );
+            
+            if (filteredUsers.length > 0) {
+                alert(`Bulunan kullan&inodot;c&inodot;lar: ${filteredUsers.map(u => u.username).join(', ')}`);
+            } else {
+                alert('Kullan&inodot;c&inodot; bulunamad&inodot;!');
+            }
+        }
+
+        function adminAddTestUser() {
+            const testUsers = [
+                {username: 'testuser1', password: 'test123'},
+                {username: 'demo_user', password: 'demo123'},
+                {username: 'admin_test', password: 'admin123'}
+            ];
+            
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+            
+            testUsers.forEach(testUser => {
+                if (!existingUsers.some(user => user.username === testUser.username)) {
+                    existingUsers.push({
+                        ...testUser,
+                        lastLogin: new Date().toLocaleString()
+                    });
+                }
+            });
+            
+            localStorage.setItem('users', JSON.stringify(existingUsers));
+            alert('Test kullan&inodot;c&inodot;lar&inodot; eklendi!');
+            updateAdminUserList();
+            loadAdminPageData();
+        }
+
+        function adminDeleteAllUsers() {
+            if (confirm('T&Uuml;M kullan&inodot;c&inodot;lar silinecek! Emin misiniz?')) {
+                localStorage.setItem('users', JSON.stringify([]));
+                alert('T&uuml;m kullan&inodot;c&inodot;lar silindi!');
+                updateAdminUserList();
+                loadAdminPageData();
+            }
+        }
+
+        function adminCreateUser() {
+            const username = document.getElementById('admin-new-username').value.trim();
+            const password = document.getElementById('admin-new-password').value;
+            const confirmPassword = document.getElementById('admin-new-password-confirm').value;
+            
+            if (!username || !password) {
+                alert('T&uuml;m alanlar&inodot; doldurun!');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('&Scedil;ifreler uymuyor!');
+                return;
+            }
+            
+            if (password.length < 4) {
+                alert('&Scedil;ifre en az 4 karakter olmal&inodot;!');
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            if (users.some(user => user.username === username)) {
+                alert('Bu kullan&inodot;c&inodot; ad&inodot; zaten al&inodot;nm&inodot;&scedil;!');
+                return;
+            }
+            
+            users.push({
+                username: username,
+                password: password,
+                lastLogin: new Date().toLocaleString()
+            });
+            
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Kullan&inodot;c&inodot; ba&scedil;ar&inodot;yla olu&scedil;turuldu!');
+            
+            // Formu temizle
+            document.getElementById('admin-new-username').value = '';
+            document.getElementById('admin-new-password').value = '';
+            document.getElementById('admin-new-password-confirm').value = '';
+            
+            updateAdminUserList();
+            loadAdminPageData();
+        }
+
+        function adminEditUser(username) {
+            const newPassword = prompt(`${username} i&ccedil;in yeni &scedil;ifre girin:`);
+            if (newPassword) {
+                if (newPassword.length < 4) {
+                    alert('&Scedil;ifre en az 4 karakter olmal&inodot;!');
+                    return;
+                }
+                
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const userIndex = users.findIndex(user => user.username === username);
+                
+                if (userIndex !== -1) {
+                    users[userIndex].password = newPassword;
+                    localStorage.setItem('users', JSON.stringify(users));
+                    alert('Kullan&inodot;c&inodot; &scedil;ifresi g&uuml;ncellendi!');
+                    updateAdminUserList();
+                }
+            }
+        }
+
+        function adminDeleteUser(username) {
+            if (confirm(`${username} kullan&inodot;c&inodot;s&inodot;n&inodot; silmek istedi&gbreve;inizden emin misiniz?`)) {
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const filteredUsers = users.filter(user => user.username !== username);
+                localStorage.setItem('users', JSON.stringify(filteredUsers));
+                alert('Kullan&inodot;c&inodot; silindi!');
+                updateAdminUserList();
+                loadAdminPageData();
+            }
+        }
+
+        function adminUpdateSiteInfo() {
+            const newTitle = document.getElementById('admin-site-title').value;
+            const newDescription = document.getElementById('admin-site-description').value;
+            
+            if (newTitle) {
+                const headerTitle = document.querySelector('header h1');
+                if (headerTitle) {
+                    headerTitle.textContent = newTitle;
+                }
+            }
+            
+            if (newDescription) {
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', newDescription);
+                }
+            }
+            
+            alert('Site bilgileri g&uuml;ncellendi!');
+        }
+
+        function adminAddCustomImage() {
+            const imageUrl = document.getElementById('admin-image-url').value.trim();
+            
+            if (imageUrl) {
+                // Mevcut addCustomImage fonksiyonunu kullan
+                const customImageInput = document.getElementById('customImageUrl');
+                if (customImageInput) {
+                    customImageInput.value = imageUrl;
+                    addCustomImage();
+                }
+                document.getElementById('admin-image-url').value = '';
+                setTimeout(() => {
+                    updateImagePreviews();
+                    loadAdminPageData();
+                }, 1000);
+            } else {
+                alert('L&uuml;tfen ge&ccedil;erli bir g&ouml;rsel URL&apos;si girin!');
+            }
+        }
+
+        function adminAddSampleImages() {
+            addSampleImages();
+            setTimeout(() => {
+                updateImagePreviews();
+                loadAdminPageData();
+            }, 1000);
+            alert('&Ouml;rnek g&ouml;rseller eklendi!');
+        }
+
+        function adminClearAllImages() {
+            if (confirm('T&uuml;m g&ouml;rseller silinecek! Emin misiniz?')) {
+                const imageContainer = document.getElementById('image-container');
+                if (imageContainer) {
+                    imageContainer.innerHTML = '';
+                }
+                updateImagePreviews();
+                loadAdminPageData();
+                alert('T&uuml;m g&ouml;rseller temizlendi!');
+            }
+        }
+
+        function adminDeleteImage(index) {
+            const images = document.querySelectorAll('.image-wrapper');
+            if (images[index]) {
+                images[index].remove();
+                updateImagePreviews();
+                loadAdminPageData();
+                alert('G&ouml;rsel silindi!');
+            }
+        }
+
+        // Mevcut JavaScript kodları
         function decodeHtml(html) {
             const txt = document.createElement('textarea');
             txt.innerHTML = html;
             return txt.value;
         }
 
-        // Kullan&inodot;c&inodot; verileri ve de&gbreve;i&scedil;kenler
         let users = JSON.parse(localStorage.getItem('users')) || [];
         let currentUser = null;
         let currentCategory = '';
         let allCategoryImages = {};
         let aiChatOpen = false;
 
-        // AI Chat mesajlar&inodot; ve responses
         const aiResponses = {
             greetings: [
                 "Merhaba! Apex Solutions AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?",
@@ -1069,7 +2098,7 @@
             ],
             about: [
                 "Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; modern bir web geli&scedil;tirme &scedil;irketidir. AI destekli &ccedil;&ouml;z&uuml;mler sunuyoruz!",
-                "&Scedil;irketimiz hakk&inodot;nda daha fazla bilgi i&ccedil;in 'Hakk&inodot;m&inodot;zda' b&ouml;l&uuml;m&uuml;n&uuml; ziyaret edebilirsiniz.",
+                "&Scedil;irketimiz hakk&inodot;nda daha fazla bilgi i&ccedil;in &apos;Hakk&inodot;m&inodot;zda&apos; b&ouml;l&uuml;m&uuml;n&uuml; ziyaret edebilirsiniz.",
                 "AlperenBabaPro250 taraf&inodot;ndan kurulan &scedil;irketimiz, yenilik&ccedil;i web &ccedil;&ouml;z&uuml;mleri sunmaktad&inodot;r."
             ],
             services: [
@@ -1079,16 +2108,16 @@
             ],
             games: [
                 "Oyun b&ouml;l&uuml;m&uuml;m&uuml;zde korku, aksiyon, silah ve futbol oyunlar&inodot; bulabilirsiniz!",
-                "Men&uuml;den 'Oyunlar' b&ouml;l&uuml;m&uuml;n&uuml; se&ccedil;erek kategorilere g&ouml;z atabilirsiniz.",
+                "Men&uuml;den &apos;Oyunlar&apos; b&ouml;l&uuml;m&uuml;n&uuml; se&ccedil;erek kategorilere g&ouml;z atabilirsiniz.",
                 "En pop&uuml;ler oyunlar&inodot;m&inodot;z: 911 Prey, Prison Escape, Football Legends!"
             ],
             images: [
                 "G&ouml;rsel galerimizde teknoloji, futbol, y&uuml;zme, do&gbreve;a ve su kategorilerinde resimler var!",
-                "&Ouml;zel resim URL'si ekleyerek kendi g&ouml;rsellerinizi de ekleyebilirsiniz.",
+                "&Ouml;zel resim URL&apos;si ekleyerek kendi g&ouml;rsellerinizi de ekleyebilirsiniz.",
                 "G&ouml;rseller b&ouml;l&uuml;m&uuml;nde Yenile butonu ile rastgele yeni resimler y&uuml;kleyebilirsiniz!"
             ],
             help: [
-                "Size yard&inodot;mc&inodot; olmak i&ccedil;in buray&inodot;m! &Scedil;u konularda sorular sorabilirsiniz:\n &Scedil;irket hakk&inodot;nda\n Hizmetlerimiz\n Oyunlar\n G&ouml;rseller\n &Idot;leti&scedil;im bilgileri",
+                "Size yard&inodot;mc&inodot; olmak i&ccedil;in buray&inodot;m! &Scedil;u konularda sorular sorabilirsiniz:\n&bull; &Scedil;irket hakk&inodot;nda\n&bull; Hizmetlerimiz\n&bull; Oyunlar\n&bull; G&ouml;rseller\n&bull; &Idot;leti&scedil;im bilgileri",
                 "Men&uuml;deki t&uuml;m b&ouml;l&uuml;mler hakk&inodot;nda bilgi verebilirim. Ne &ouml;&gbreve;renmek istiyorsunuz?",
                 "Herhangi bir teknik sorun ya&scedil;&inodot;yorsan&inodot;z da bana s&ouml;yleyebilirsiniz!"
             ],
@@ -1099,7 +2128,6 @@
             ]
         };
 
-        // AI Chat Functions
         function toggleAiChat() {
             const chatWindow = document.getElementById('ai-chat');
             const toggleBtn = document.getElementById('ai-toggle');
@@ -1129,17 +2157,14 @@
             
             if (!message) return;
             
-            // Kullanýcý mesajýný ekle (HTML entity olmadan)
             addMessageToChat(message, 'user');
             input.value = '';
             
-            // AI cevabýný simüle et
             showTypingIndicator();
             
             setTimeout(() => {
                 const response = generateAIResponse(message);
                 hideTypingIndicator();
-                // AI yanýtýný HTML entity ile ekle
                 addAIMessageToChat(response);
             }, Math.random() * 2000 + 1000);
         }
@@ -1148,7 +2173,7 @@
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}-message`;
-            messageDiv.textContent = message; // Kullanýcý mesajý için textContent
+            messageDiv.textContent = message;
             
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1158,7 +2183,7 @@
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message ai-message';
-            messageDiv.innerHTML = htmlMessage; // AI mesajý için innerHTML
+            messageDiv.innerHTML = htmlMessage;
             
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1176,47 +2201,38 @@
         function generateAIResponse(userMessage) {
             const message = userMessage.toLowerCase();
             
-            // Selamlama kontrolü
             if (message.includes('merhaba') || message.includes('selam') || message.includes('hey') || message.includes('hi')) {
                 return getRandomResponse(aiResponses.greetings);
             }
             
-            // Þirket hakkýnda
-            if (message.includes('hakkýnda') || message.includes('þirket') || message.includes('apex')) {
+            if (message.includes('hakk&inodot;nda') || message.includes('&scedil;irket') || message.includes('apex')) {
                 return getRandomResponse(aiResponses.about);
             }
             
-            // Hizmetler
-            if (message.includes('hizmet') || message.includes('ne yapýyorsunuz') || message.includes('service')) {
+            if (message.includes('hizmet') || message.includes('ne yap&inodot;yorsunuz') || message.includes('service')) {
                 return getRandomResponse(aiResponses.services);
             }
             
-            // Oyunlar
             if (message.includes('oyun') || message.includes('game') || message.includes('oyna')) {
                 return getRandomResponse(aiResponses.games);
             }
             
-            // Görseller
-            if (message.includes('resim') || message.includes('görsel') || message.includes('fotoðraf') || message.includes('image')) {
+            if (message.includes('resim') || message.includes('g&ouml;rsel') || message.includes('foto&gbreve;raf') || message.includes('image')) {
                 return getRandomResponse(aiResponses.images);
             }
             
-            // Yardým
-            if (message.includes('yardým') || message.includes('help') || message.includes('nasýl') || message.includes('ne yapabilirim')) {
+            if (message.includes('yard&inodot;m') || message.includes('help') || message.includes('nas&inodot;l') || message.includes('ne yapabilirim')) {
                 return getRandomResponse(aiResponses.help);
             }
             
-            // Ýletiþim
-            if (message.includes('iletiþim') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
+            if (message.includes('ileti&scedil;im') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
                 return "&Idot;leti&scedil;im bilgilerimiz: 0 536 799 50 89 | alperenizer07@gmail.com | &Ccedil;al&inodot;&scedil;ma saatleri: 09:00-18:00";
             }
             
-            // Teþekkür
-            if (message.includes('teþekkür') || message.includes('saðol') || message.includes('thank')) {
+            if (message.includes('te&scedil;ekk&uuml;r') || message.includes('sa&gbreve;ol') || message.includes('thank')) {
                 return "Rica ederim! Ba&scedil;ka bir &scedil;ey i&ccedil;in yard&inodot;ma ihtiyac&inodot;n&inodot;z olursa buray&inodot;m!";
             }
             
-            // Varsayýlan cevap
             return getRandomResponse(aiResponses.default);
         }
 
@@ -1224,7 +2240,6 @@
             return responses[Math.floor(Math.random() * responses.length)];
         }
 
-        // Menü butonu hareket fonksiyonlarý
         function moveMenuButtonDown() {
             const sidebarToggle = document.getElementById('sidebar-toggle');
             sidebarToggle.classList.add('moved-down');
@@ -1235,7 +2250,6 @@
             sidebarToggle.classList.remove('moved-down');
         }
 
-        // Form geçiþ fonksiyonlarý
         function showRegisterForm() {
             document.getElementById('loginBox').style.display = 'none';
             document.getElementById('registerBox').style.display = 'block';
@@ -1248,7 +2262,6 @@
             document.getElementById('loginError').style.display = 'none';
         }
 
-        // Kayýt olma fonksiyonu
         function registerUser() {
             const username = document.getElementById('regUsername').value.trim();
             const password = document.getElementById('regPassword').value;
@@ -1281,11 +2294,12 @@
 
             users.push({
                 username: username,
-                password: password
+                password: password,
+                lastLogin: new Date().toLocaleString()
             });
 
             localStorage.setItem('users', JSON.stringify(users));
-            alert(decodeHtml('Kay&inodot;t ba&scedil;ar&inodot;l&inodot;! Giri&scedil; yapabilirsiniz.'));
+            alert('Kay&inodot;t ba&scedil;ar&inodot;l&inodot;! Giri&scedil; yapabilirsiniz.');
             showLoginForm();
 
             document.getElementById('regUsername').value = '';
@@ -1293,7 +2307,6 @@
             document.getElementById('regConfirmPassword').value = '';
         }
 
-        // Giriþ kontrol fonksiyonu
         function checkLogin() {
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
@@ -1305,19 +2318,19 @@
 
             if (user) {
                 currentUser = user;
+                user.lastLogin = new Date().toLocaleString();
+                localStorage.setItem('users', JSON.stringify(users));
+                
                 loginError.style.display = "none";
-
                 loginBox.classList.add('fade-out');
 
                 setTimeout(() => {
                     document.getElementById("loginModal").style.display = "none";
                     loginBox.classList.remove('fade-out');
-
                     mainContent.style.display = "block";
                     setTimeout(() => {
                         mainContent.classList.add('fade-in');
                     }, 10);
-
                     document.body.style.overflow = "auto";
                     showSection('anasayfa');
                 }, 500);
@@ -1326,17 +2339,15 @@
             }
         }
 
-        // Resim silme fonksiyonu
         function deleteImage(button) {
             const imageWrapper = button.parentElement;
             imageWrapper.style.transform = 'scale(0)';
             setTimeout(() => {
                 imageWrapper.remove();
             }, 300);
-            alert(decodeHtml('Resim silindi!'));
+            alert('Resim silindi!');
         }
 
-        // Özel resim ekleme
         function addCustomImage() {
             const urlInput = document.getElementById('customImageUrl');
             const imageUrl = urlInput.value.trim();
@@ -1350,7 +2361,7 @@
 
                 const newImg = document.createElement('img');
                 newImg.src = imageUrl;
-                newImg.alt = decodeHtml('&Ouml;zel G&ouml;rsel');
+                newImg.alt = '&Ouml;zel G&ouml;rsel';
 
                 const deleteBtn = document.createElement('button');
                 deleteBtn.className = 'delete-btn';
@@ -1368,9 +2379,9 @@
                 }, 10);
 
                 urlInput.value = '';
-                alert(decodeHtml('Resim ba&scedil;ar&inodot;yla eklendi!'));
+                alert('Resim ba&scedil;ar&inodot;yla eklendi!');
             } else {
-                alert(decodeHtml('L&uuml;tfen ge&ccedil;erli bir resim URL\'si girin!'));
+                alert('L&uuml;tfen ge&ccedil;erli bir resim URL&apos;si girin!');
             }
         }
 
@@ -1383,7 +2394,6 @@
             }
         }
 
-        // Resimleri güncelleme
         function updateImages() {
             const container = document.getElementById('image-container');
             container.style.opacity = '0';
@@ -1397,13 +2407,11 @@
             }, 300);
         }
 
-        // Rastgele resim seçme
         function getRandomImages(images, count) {
             const shuffled = [...images].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
         }
 
-        // Kategori resimlerini yükleme
         function loadCategoryImages(category) {
             const container = document.getElementById('image-container');
             container.innerHTML = '';
@@ -1496,7 +2504,6 @@
             });
         }
 
-        // Kategori gösterme
         function showCategory(category) {
             currentCategory = category;
             
@@ -1514,7 +2521,6 @@
             loadCategoryImages(category);
         }
 
-        // Bölüm gösterme
         function showSection(id) {
             const sections = document.querySelectorAll('.content > div');
             sections.forEach(section => {
@@ -1530,7 +2536,6 @@
             }
         }
         
-        // Sidebar fonksiyonlarý
         function openSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
@@ -1551,7 +2556,6 @@
             sidebarToggle.classList.remove('open');
         }
 
-        // Oyunlarý gösterme
         function showGames(category) {
             const gamesTitle = document.getElementById('games-title');
             const gamesDescription = document.getElementById('games-description');
@@ -1648,9 +2652,19 @@
             closeSidebar();
         }
 
-        // Sayfa yüklendiðinde baþlatýlan fonksiyonlar
-        window.addEventListener('DOMContentLoaded', () => {
-            // Hoþ geldin animasyonu
+        // Sayfa yüklendiğinde
+        window.addEventListener('DOMContentLoaded', function() {
+            checkURLForAdmin();
+            assignTextIds();
+            if (!localStorage.getItem('originalTexts')) {
+                saveOriginalTexts();
+            }
+            loadSavedTexts();
+            loadRemovedElements();
+            
+            // Hash değişikliklerini dinle
+            window.addEventListener('hashchange', checkURLForAdmin);
+            
             setTimeout(() => {
                 if (!currentUser) {
                     document.getElementById("loginModal").style.display = "flex";
@@ -1662,98 +2676,12 @@
                     showSection('anasayfa');
                 }
             }, 500);
-
-            // Paralaks efekti
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('body::before');
-                if (parallax) {
-                    const speed = scrolled * 0.5;
-                }
-            });
-
-            // Klavye kýsayollarý
-            document.addEventListener('keydown', (e) => {
-                // Ctrl + / ile AI chat aç/kapat
-                if (e.ctrlKey && e.key === '/') {
-                    e.preventDefault();
-                    toggleAiChat();
-                }
-                
-                // ESC ile AI chat kapat
-                if (e.key === 'Escape' && aiChatOpen) {
-                    toggleAiChat();
-                }
-            });
-
-            // Performans optimizasyonu
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.loading = 'lazy';
-            });
         });
 
-        // Touch events için mobil optimizasyon
-        let touchStartY = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            const touchY = e.touches[0].clientY;
-            const touchDiff = touchStartY - touchY;
-            
-            // Yukarý kaydýrma ile AI chat aç
-            if (touchDiff > 100 && !aiChatOpen) {
-                toggleAiChat();
-            }
-        });
-
-        // Hata yakalama ve logging
-        window.addEventListener('error', (e) => {
-            console.error('Hata yakalandý:', e.error);
-        });
-
-        // Service Worker için PWA desteði (opsiyonel)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Service worker kaydý yapýlabilir
-            });
-        }
-
-        // Dark/Light mode toggle (gelecek özellik için hazýr)
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark-theme');
-            localStorage.setItem('theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
-        }
-
-        // Animasyon performansý için optimize edilmiþ scroll
-        let ticking = false;
-        function updateScrollEffects() {
-            // Scroll efektleri burada
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateScrollEffects);
-                ticking = true;
-            }
-        });
-
-        // Analytics tracking (opsiyonel)
-        function trackEvent(eventName, data) {
-            // Analytics kodu burada olabilir
-            console.log(`Event: ${eventName}`, data);
-        }
-
-        // Baþlangýç mesajlarý
         console.log('Apex Solutions AI Powered Website Loaded!');
-        console.log('AI Chat: Sa&gbreve; alttaki butona t&inodot;klay&inodot;n veya Ctrl+/ kullan&inodot;n');
-        console.log('Games: Men&uuml;den oyunlar b&ouml;l&uuml;m&uuml;n&uuml; ke&scedil;fedin');
-        console.log('Images: Dinamik g&ouml;rsel galerilerini inceleyin');
+        console.log('Admin Panel: URL sonuna #admin ekleyin');
+        console.log('Admin &Scedil;ifresi: Gulay_Alperen***/***');
     </script>
 </body>
 </html>
-
 
