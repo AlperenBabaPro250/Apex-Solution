@@ -25,13 +25,11 @@
             --card-bg: rgba(255, 255, 255, 0.02);
             --border-color: rgba(255, 255, 255, 0.08);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--primary-bg);
@@ -39,7 +37,6 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-
         /* Admin Page Styles */
         .admin-page {
             display: none;
@@ -48,11 +45,9 @@
             color: var(--primary-text);
             padding: 20px;
         }
-
         .admin-page.active {
             display: block;
         }
-
         .admin-header {
             text-align: center;
             padding: 30px;
@@ -61,7 +56,6 @@
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 30px;
         }
-
         .admin-header h1 {
             font-size: 3rem;
             font-weight: 800;
@@ -70,19 +64,16 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-
         .admin-container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .admin-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
         }
-
         .admin-card {
             background: var(--dark-glass-bg);
             backdrop-filter: blur(20px);
@@ -91,7 +82,6 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
-
         .admin-card h3 {
             color: var(--accent-color);
             margin-bottom: 20px;
@@ -99,14 +89,12 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
-
         .admin-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-top: 15px;
         }
-
         .admin-stat {
             text-align: center;
             padding: 15px;
@@ -114,24 +102,20 @@
             border-radius: 10px;
             border: 1px solid var(--border-color);
         }
-
         .admin-stat .number {
             font-size: 2rem;
             font-weight: bold;
             color: var(--accent-color);
             margin-bottom: 5px;
         }
-
         .admin-stat .label {
             font-size: 0.9rem;
             color: var(--secondary-text);
         }
-
         .user-management {
             max-height: 400px;
             overflow-y: auto;
         }
-
         .user-item {
             display: flex;
             justify-content: space-between;
@@ -142,26 +126,21 @@
             margin-bottom: 10px;
             border: 1px solid var(--border-color);
         }
-
         .user-info {
             flex: 1;
         }
-
         .user-name {
             font-weight: 600;
             margin-bottom: 5px;
         }
-
         .user-details {
             font-size: 0.8rem;
             color: var(--tertiary-text);
         }
-
         .user-actions {
             display: flex;
             gap: 10px;
         }
-
         .admin-btn {
             padding: 8px 15px;
             border: none;
@@ -170,38 +149,31 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
         .admin-btn.primary {
             background: var(--accent-color);
             color: white;
         }
-
         .admin-btn.danger {
             background: var(--danger-color);
             color: white;
         }
-
         .admin-btn.success {
             background: var(--success-color);
             color: white;
         }
-
         .admin-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: var(--secondary-text);
             font-weight: 600;
         }
-
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -211,18 +183,15 @@
             color: var(--primary-text);
             font-size: 14px;
         }
-
         .form-control:focus {
             outline: none;
             border-color: var(--accent-color);
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
-
         .text-management {
             max-height: 400px;
             overflow-y: auto;
         }
-
         .text-item {
             margin-bottom: 15px;
             padding: 15px;
@@ -230,21 +199,18 @@
             border-radius: 10px;
             border: 1px solid var(--border-color);
         }
-
         .text-item label {
             display: block;
             margin-bottom: 8px;
             color: var(--accent-color);
             font-weight: 600;
         }
-
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-
         .back-to-site {
             position: fixed;
             top: 20px;
@@ -258,12 +224,10 @@
             font-weight: 600;
             z-index: 1000;
         }
-
         .back-to-site:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
         }
-
         .password-modal {
             position: fixed;
             top: 0;
@@ -277,7 +241,6 @@
             align-items: center;
             z-index: 9999;
         }
-
         .password-box {
             background: var(--dark-glass-bg);
             backdrop-filter: blur(20px);
@@ -289,7 +252,6 @@
             width: 400px;
             color: var(--primary-text);
         }
-
         .password-box h2 {
             margin-bottom: 30px;
             font-size: 28px;
@@ -298,7 +260,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .password-box input {
             width: 100%;
             padding: 15px 20px;
@@ -310,14 +271,12 @@
             font-size: 16px;
             backdrop-filter: blur(10px);
         }
-
         .password-box input:focus {
             outline: none;
             border-color: var(--accent-color);
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
-
         .password-box button {
             background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
             color: white;
@@ -331,19 +290,16 @@
             width: 100%;
             transition: all 0.3s ease;
         }
-
         .password-box button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
         }
-
         .password-error {
             color: var(--danger-color);
             margin-top: 15px;
             font-weight: 600;
             display: none;
         }
-
         /* Animated Background */
         body::before {
             content: '';
@@ -352,19 +308,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
             animation: float 20s ease-in-out infinite;
             z-index: -1;
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
-
         /* Glassmorphism Effect */
         .glass {
             background: var(--glass-bg);
@@ -373,7 +327,6 @@
             border-radius: 20px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
-
         /* Login Modal */
         #loginModal {
             position: fixed;
@@ -388,7 +341,6 @@
             align-items: center;
             z-index: 9999;
         }
-
         #loginBox, #registerBox {
             background: var(--dark-glass-bg);
             backdrop-filter: blur(20px);
@@ -402,16 +354,13 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             transform: scale(1);
         }
-
         #loginBox.fade-out, #registerBox.fade-out {
             opacity: 0;
             transform: scale(0.8) translateY(-50px);
         }
-
         #registerBox {
             display: none;
         }
-
         #loginBox h2, #registerBox h2 {
             margin-bottom: 30px;
             font-size: 28px;
@@ -420,7 +369,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         #loginBox input, #registerBox input {
             width: 100%;
             padding: 15px 20px;
@@ -433,18 +381,15 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
-
         #loginBox input:focus, #registerBox input:focus {
             outline: none;
             border-color: var(--accent-color);
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
-
         #loginBox input::placeholder, #registerBox input::placeholder {
             color: var(--tertiary-text);
         }
-
         #loginBox button, #registerBox button {
             background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
             color: white;
@@ -460,16 +405,13 @@
             position: relative;
             overflow: hidden;
         }
-
         #loginBox button:hover, #registerBox button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
         }
-
         #loginBox button:active, #registerBox button:active {
             transform: translateY(0);
         }
-
         .switch-form {
             color: var(--accent-color);
             cursor: pointer;
@@ -478,12 +420,10 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .switch-form:hover {
             color: var(--accent-hover);
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
-
         #loginError, #registerError {
             color: var(--danger-color);
             margin-top: 15px;
@@ -494,7 +434,6 @@
             border-radius: 10px;
             background: rgba(255, 71, 87, 0.1);
         }
-
         /* Main Content */
         #main-content {
             display: none;
@@ -503,15 +442,12 @@
             margin-left: 0;
             min-height: 100vh;
         }
-
         #main-content.fade-in {
             opacity: 1 !important;
         }
-
         #main-content.shifted {
             margin-left: 280px;
         }
-
         /* Header */
         header {
             background: var(--dark-glass-bg);
@@ -522,7 +458,6 @@
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
-
         header h1 {
             font-size: 3rem;
             font-weight: 800;
@@ -532,7 +467,6 @@
             margin-bottom: 10px;
             text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
-
         .brand-text {
             background: var(--dark-glass-bg);
             backdrop-filter: blur(20px);
@@ -543,7 +477,6 @@
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
-
         /* Sidebar */
         #sidebar-toggle {
             position: fixed;
@@ -566,22 +499,18 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border-color);
         }
-
         #sidebar-toggle:hover {
             background: var(--accent-hover);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
-
         #sidebar-toggle.open {
             left: 280px;
         }
-
         /* Men&uuml; butonu hareket s&inodot;n&inodot;flar&inodot; */
         #sidebar-toggle.moved-down {
             top: calc(50% + 130px);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         #sidebar {
             position: fixed;
             left: -280px;
@@ -595,11 +524,9 @@
             padding-top: 20px;
             border-right: 1px solid var(--border-color);
         }
-
         #sidebar.open {
             left: 0;
         }
-
         #sidebar button {
             display: block;
             width: 100%;
@@ -615,23 +542,19 @@
             position: relative;
             overflow: hidden;
         }
-
         #sidebar button:hover {
             background: rgba(0, 212, 255, 0.1);
             color: var(--accent-color);
             padding-left: 35px;
         }
-
         #sidebar button:not(:last-child) {
             border-bottom: 1px solid var(--border-color);
         }
-
         /* Content */
         .content {
             padding: 40px;
             min-height: calc(100vh - 200px);
         }
-
         .content > div {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             background: var(--card-bg);
@@ -640,7 +563,6 @@
             padding: 30px;
             border: 1px solid var(--border-color);
         }
-
         .content > div.hidden {
             opacity: 0;
             transform: translateY(20px);
@@ -649,26 +571,22 @@
             padding: 0;
             margin: 0;
         }
-
         .content > div:not(.hidden) {
             opacity: 1;
             transform: translateY(0);
         }
-
         .content h2 {
             color: var(--accent-color);
             margin-bottom: 20px;
             font-size: 2.5rem;
             font-weight: 700;
         }
-
         .content p {
             line-height: 1.8;
             margin-bottom: 15px;
             color: var(--secondary-text);
             font-size: 16px;
         }
-
         /* AI Chat Section */
         #ai-chat {
             position: fixed;
@@ -685,11 +603,9 @@
             transform: translateY(100%);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         #ai-chat.open {
             transform: translateY(0);
         }
-
         #ai-toggle {
             position: fixed;
             bottom: 30px;
@@ -709,12 +625,10 @@
             font-size: 24px;
             color: white;
         }
-
         #ai-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
         }
-
         #chat-header {
             padding: 20px;
             border-bottom: 1px solid var(--border-color);
@@ -722,13 +636,11 @@
             justify-content: space-between;
             align-items: center;
         }
-
         #chat-header h3 {
             color: var(--accent-color);
             font-size: 18px;
             font-weight: 700;
         }
-
         #chat-close {
             background: none;
             border: none;
@@ -739,11 +651,9 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
-
         #chat-close:hover {
             background: var(--danger-color);
         }
-
         #chat-messages {
             height: 350px;
             overflow-y: auto;
@@ -751,20 +661,16 @@
             scrollbar-width: thin;
             scrollbar-color: var(--accent-color) transparent;
         }
-
         #chat-messages::-webkit-scrollbar {
             width: 6px;
         }
-
         #chat-messages::-webkit-scrollbar-track {
             background: transparent;
         }
-
         #chat-messages::-webkit-scrollbar-thumb {
             background: var(--accent-color);
             border-radius: 3px;
         }
-
         .message {
             margin-bottom: 15px;
             padding: 12px 16px;
@@ -773,26 +679,22 @@
             word-wrap: break-word;
             animation: fadeIn 0.3s ease-in;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .user-message {
             background: linear-gradient(45deg, var(--accent-color), #ff6b9d);
             color: white;
             margin-left: auto;
             text-align: right;
         }
-
         .ai-message {
             background: var(--glass-bg);
             color: var(--primary-text);
             margin-right: auto;
             border: 1px solid var(--border-color);
         }
-
         .typing-indicator {
             display: none;
             background: var(--glass-bg);
@@ -803,12 +705,10 @@
             max-width: 85%;
             border: 1px solid var(--border-color);
         }
-
         .typing-dots {
             display: inline-flex;
             gap: 4px;
         }
-
         .typing-dots span {
             width: 6px;
             height: 6px;
@@ -816,22 +716,18 @@
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
-
         .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
         .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
         @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
             30% { transform: translateY(-10px); opacity: 1; }
         }
-
         #chat-input-container {
             padding: 20px;
             border-top: 1px solid var(--border-color);
             display: flex;
             gap: 10px;
         }
-
         #chat-input {
             flex: 1;
             padding: 12px 16px;
@@ -843,16 +739,13 @@
             outline: none;
             transition: all 0.3s ease;
         }
-
         #chat-input:focus {
             border-color: var(--accent-color);
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
-
         #chat-input::placeholder {
             color: var(--tertiary-text);
         }
-
         #send-btn {
             background: var(--accent-color);
             border: none;
@@ -866,18 +759,15 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-
         #send-btn:hover {
             background: var(--accent-hover);
             transform: scale(1.1);
         }
-
         #send-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
             transform: scale(1);
         }
-
         /* Game Buttons */
         .game-button {
             padding: 15px 30px;
@@ -892,12 +782,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .game-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
         }
-
         .game-container {
             margin: 20px 0;
             padding: 25px;
@@ -906,7 +794,6 @@
             border: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
         }
-
         /* Images */
         .image-wrapper {
             position: relative;
@@ -917,12 +804,10 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
-
         .image-wrapper:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-
         .image-wrapper img {
             max-width: 300px;
             width: 100%;
@@ -930,7 +815,6 @@
             border-radius: 15px;
             transition: all 0.3s ease;
         }
-
         .delete-btn {
             position: absolute;
             top: 10px;
@@ -949,12 +833,10 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-
         .delete-btn:hover {
             background: #ff3742;
             transform: scale(1.1);
         }
-
         /* Custom Image Section */
         .custom-image-section {
             margin-top: 30px;
@@ -963,7 +845,6 @@
             border-radius: 15px;
             border: 1px solid var(--border-color);
         }
-
         .custom-image-input {
             width: 300px;
             padding: 12px 16px;
@@ -974,16 +855,13 @@
             color: var(--primary-text);
             font-size: 14px;
         }
-
         .custom-image-input:focus {
             outline: none;
             border-color: var(--accent-color);
         }
-
         .custom-image-input::placeholder {
             color: var(--tertiary-text);
         }
-
         .add-image-btn {
             padding: 12px 25px;
             background: var(--accent-color);
@@ -994,12 +872,10 @@
             margin-left: 10px;
             transition: all 0.3s ease;
         }
-
         .add-image-btn:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
         }
-
         /* Update Button */
         .update-btn {
             margin-left: 15px;
@@ -1012,12 +888,10 @@
             font-size: 16px;
             transition: all 0.3s ease;
         }
-
         .update-btn:hover {
             background: var(--accent-hover);
             transform: scale(1.05);
         }
-
         /* Footer */
         footer {
             background: var(--dark-glass-bg);
@@ -1028,7 +902,6 @@
             border-top: 1px solid var(--border-color);
             margin-top: 50px;
         }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             #ai-chat {
@@ -1036,47 +909,37 @@
                 right: 20px;
                 bottom: 100px;
             }
-
             #loginBox, #registerBox {
                 width: calc(100vw - 40px);
                 margin: 0 20px;
             }
-
             header h1 {
                 font-size: 2rem;
             }
-
             .content {
                 padding: 20px;
             }
-
             #main-content.shifted {
                 margin-left: 0;
             }
-
             #sidebar {
                 width: 100vw;
             }
-
             .admin-page .admin-grid {
                 grid-template-columns: 1fr;
             }
-
             .admin-card {
                 padding: 15px;
             }
-
             .password-box {
                 width: calc(100vw - 40px);
                 margin: 0 20px;
             }
         }
-
         /* Sub Menu */
         .has-sub-menu {
             position: relative;
         }
-
         .sub-menu {
             position: absolute;
             left: 100%;
@@ -1089,22 +952,18 @@
             border-radius: 0 15px 15px 0;
             z-index: 1001;
         }
-
         .has-sub-menu:hover .sub-menu {
             display: block;
         }
-
         .sub-menu button {
             padding: 15px 20px;
             font-size: 14px;
             color: var(--secondary-text);
         }
-
         .sub-menu button:hover {
             color: var(--accent-color);
             background: rgba(0, 212, 255, 0.1);
         }
-
         /* Premium features styling */
         .premium-features {
             margin: 30px 0;
@@ -1113,22 +972,18 @@
             border-radius: 15px;
             border-left: 4px solid var(--accent-color);
         }
-
         .premium-features h3 {
             color: var(--accent-color);
             margin-bottom: 15px;
         }
-
         .premium-features ul {
             list-style: none;
             padding: 0;
         }
-
         .premium-features li {
             padding: 8px 0;
             color: var(--secondary-text);
         }
-
         /* Grid layouts */
         .grid-container {
             display: grid;
@@ -1136,45 +991,36 @@
             gap: 25px;
             margin-top: 30px;
         }
-
         .grid-item {
             padding: 25px;
             border-radius: 15px;
         }
-
         .grid-item.accent {
             background: rgba(0, 212, 255, 0.05);
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
-
         .grid-item.pink {
             background: rgba(255, 107, 157, 0.05);
             border: 1px solid rgba(255, 107, 157, 0.2);
         }
-
         .grid-item.green {
             background: rgba(0, 255, 136, 0.05);
             border: 1px solid rgba(0, 255, 136, 0.2);
         }
-
         .grid-item h3 {
             margin-bottom: 15px;
         }
-
         .grid-item.accent h3 {
             color: var(--accent-color);
         }
-
         .grid-item.pink h3 {
             color: #ff6b9d;
         }
-
         .grid-item.green h3 {
             color: var(--success-color);
         }
     </style>
 </head>
-
 <body>
     <!-- Ana Site İçeriği -->
     <div id="main-site">
@@ -1187,7 +1033,6 @@
                 <div id="loginError">Kullan&inodot;c&inodot; Ad&inodot; Veya &Scedil;ifre Hatal&inodot;!</div>
                 <a class="switch-form" onclick="showRegisterForm()">Hesab&inodot;n&inodot;z yok mu? Kay&inodot;t Olun</a>
             </div>
-
             <div id="registerBox">
                 <h2>Kay&inodot;t Ol</h2>
                 <input type="text" id="regUsername" placeholder="Kullan&inodot;c&inodot; Ad&inodot;" />
@@ -1198,9 +1043,8 @@
                 <a class="switch-form" onclick="showLoginForm()">Zaten hesab&inodot;n&inodot;z var m&inodot;? Giri&scedil; Yap&inodot;n</a>
             </div>
         </div>
-
-        <div id="sidebar-container" 
-             onmouseover="openSidebar()" 
+        <div id="sidebar-container"
+             onmouseover="openSidebar()"
              onmouseleave="closeSidebar()">
             <button id="sidebar-toggle">MEN&Uuml;</button>
             <div id="sidebar">
@@ -1229,10 +1073,8 @@
                 <button onclick="showSection('hizmet')">M&uuml;&scedil;teri Hizmetleri</button>
             </div>
         </div>
-
         <!-- AI Chat Toggle Button -->
         <button id="ai-toggle" onclick="toggleAiChat()">AI</button>
-
         <!-- AI Chat Window -->
         <div id="ai-chat">
             <div id="chat-header">
@@ -1256,24 +1098,21 @@
                 <button id="send-btn" onclick="sendMessage()">></button>
             </div>
         </div>
-
         <div id="main-content">
             <header>
                 <h1>Apex Solutions</h1>
                 <p style="font-size: 1.2rem; margin-top: 10px; color: var(--secondary-text);">AI Destekli Web &Ccedil;&ouml;z&uuml;mleri</p>
             </header>
-
             <div class="brand-text">
                 by AlperenBabaPro250 AI Powered
             </div>
-
             <div class="content">
                 <div id="anasayfa">
                     <h2>Apex Solutions'a Ho&scedil; Geldiniz!</h2>
                     <p>Yapay zeka destekli profesyonel web &ccedil;&ouml;z&uuml;mleri sunan &scedil;irketimiz, i&scedil;letmenizin dijital varl&inodot;&gbreve;&inodot;n&inodot; g&uuml;&ccedil;lendirmek i&ccedil;in burada. Yenilik&ccedil;i tasar&inodot;mlar, kullan&inodot;c&inodot; dostu aray&uuml;zler ve ak&inodot;ll&inodot; AI asistan&inodot;m&inodot;zla markan&inodot;z&inodot; &ouml;ne &ccedil;&inodot;kar&inodot;yoruz.</p>
                     <p><strong>Yeni &Ouml;zellik:</strong> Sa&gbreve; alttaki AI asistan&inodot;m&inodot;zla konu&scedil;arak sitemizdeki t&uuml;m &ouml;zellikler hakk&inodot;nda bilgi alabilir, sorular&inodot;n&inodot;z&inodot; sorabilirsiniz!</p>
                     <p>Hizmetlerimiz hakk&inodot;nda daha fazla bilgi edinmek i&ccedil;in men&uuml;y&uuml; kullanabilir veya AI asistan&inodot;m&inodot;zla sohbet edebilirsiniz.</p>
-                    
+                   
                     <div class="premium-features">
                         <h3>Premium &Ouml;zellikler</h3>
                         <ul>
@@ -1285,45 +1124,40 @@
                         </ul>
                     </div>
                 </div>
-
                 <div id="hakkimizda" class="hidden">
                     <h2>Hakk&inodot;m&inodot;zda</h2>
                     <p>Apex Solutions, 2025 y&inodot;l&inodot;nda kurulmu&scedil; bir web geli&scedil;tirme ve dijital &ccedil;&ouml;z&uuml;mler &scedil;irketidir. M&uuml;&scedil;terilerimize &ouml;zel &ccedil;&ouml;z&uuml;mler sunarak i&scedil;letmelerinin dijital d&uuml;nyada ba&scedil;ar&inodot;l&inodot; olmalar&inodot;n&inodot; sa&gbreve;l&inodot;yoruz.</p>
-                    
+                   
                     <div class="grid-container">
                         <div class="grid-item accent">
                             <h3>Vizyonumuz</h3>
                             <p>Teknolojinin g&uuml;c&uuml;n&uuml; kullanarak m&uuml;&scedil;terilerimizin i&scedil; s&uuml;re&ccedil;lerini kolayla&scedil;t&inodot;rmak ve dijital d&ouml;n&uuml;&scedil;&uuml;mlerine liderlik etmek. AI teknolojileri ile gelece&gbreve;in web &ccedil;&ouml;z&uuml;mlerini bug&uuml;nden sunmak.</p>
                         </div>
-                        
+                       
                         <div class="grid-item pink">
                             <h3>Misyonumuz</h3>
                             <p>Yenilik&ccedil;i, kullan&inodot;c&inodot; dostu ve etkili web &ccedil;&ouml;z&uuml;mleri sunarak m&uuml;&scedil;teri memnuniyetini en &uuml;st seviyede tutmak. AI destekli hizmetlerle sekt&ouml;rde &ouml;nc&uuml; olmak.</p>
                         </div>
                     </div>
-
                     <div style="margin-top: 30px; text-align: center;">
                         <h3 style="color: var(--accent-color); margin-bottom: 20px;">Ekibimiz</h3>
                         <p>Deneyimli yaz&inodot;l&inodot;m geli&scedil;tiriciler, UI/UX tasar&inodot;mc&inodot;lar ve AI uzmanlar&inodot;ndan olu&scedil;an ekibimizle projelerinizi hayata ge&ccedil;iriyoruz.</p>
                     </div>
                 </div>
-
                 <div id="gorseller" class="hidden">
                     <h2 id="gorsel-baslik">G&ouml;rseller
                         <button class="update-btn" onclick="updateImages()">Yenile</button>
                     </h2>
                     <p id="gorsel-aciklama">AlperenBabaPro250 taraf&inodot;ndan &ouml;zenle se&ccedil;ilmi&scedil; ve tasar&inodot;m&inodot;&scedil; kaliteli g&ouml;rseller koleksiyonu ile projelerinize ilham kat&inodot;n. AI asistan&inodot;m&inodot;zdan g&ouml;rsel &ouml;nerileri de alabilirsiniz!</p>
-
                     <div id="image-container">
                     </div>
-                    
+                   
                     <div class="custom-image-section">
                         <h3>&Ouml;zel Proje Ekleyin</h3>
                         <input type="url" class="custom-image-input" id="customImageUrl" placeholder="Resim URL&apos;sini buraya yap&inodot;&scedil;t&inodot;r&inodot;n...">
                         <button class="add-image-btn" onclick="addCustomImage()">Resmi Ekle</button>
                     </div>
                 </div>
-
                 <div id="bagis" class="hidden">
                     <h2>Ba&gbreve;&inodot;&scedil;</h2>
                     <div class="grid-item green">
@@ -1332,7 +1166,6 @@
                         <p style="margin-top: 15px; color: var(--secondary-text);">Destekleriniz sayesinde daha g&uuml;&ccedil;l&uuml; AI &ouml;zellikler geli&scedil;tirmeye devam ediyoruz!</p>
                     </div>
                 </div>
-
                 <div id="hizmet" class="hidden">
                     <h2>M&uuml;&scedil;teri Hizmetleri</h2>
                     <div class="grid-container">
@@ -1342,7 +1175,7 @@
                             <p><strong>E-posta:</strong> alperenizer07@gmail.com</p>
                             <p><strong>&Ccedil;al&inodot;&scedil;ma Saatleri:</strong> Hafta i&ccedil;i 09:00 - 18:00</p>
                         </div>
-                        
+                       
                         <div class="grid-item pink">
                             <h3>AI Destek</h3>
                             <p>7/24 aktif AI asistan&inodot;m&inodot;z size an&inodot;nda yard&inodot;m edebilir!</p>
@@ -1350,30 +1183,26 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="games" class="hidden">
                     <h2 id="games-title"></h2>
                     <p id="games-description"></p>
                     <div id="games-content"></div>
                 </div>
             </div>
-
             <footer>
                 <p>&copy; 2025 Apex Solutions - T&uuml;m Haklar&inodot; Sakl&inodot;d&inodot;r.</p>
                 <p style="margin-top: 10px; color: var(--accent-color);">AI Powered &bull; Future Ready &bull; Innovation First</p>
             </footer>
         </div>
     </div>
-
     <!-- Admin Sayfası (Gizli) -->
     <div id="admin-page" class="admin-page">
         <button class="back-to-site" onclick="goToMainSite()">&larr; Siteye D&ouml;n</button>
-        
+       
         <div class="admin-header">
             <h1>Apex Solutions Admin</h1>
             <p>Site y&ouml;netim paneli - Tam yetkili y&ouml;netim</p>
         </div>
-
         <div class="admin-container">
             <!-- İstatistikler -->
             <div class="admin-grid">
@@ -1398,7 +1227,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="admin-card">
                     <h3>H&inodot;zl&inodot; &Idot;&scedil;lemler</h3>
                     <div class="quick-actions">
@@ -1409,7 +1237,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Kullanıcı Yönetimi -->
             <div class="admin-grid">
                 <div class="admin-card">
@@ -1418,19 +1245,18 @@
                         <input type="text" class="form-control" id="admin-search-user" placeholder="Kullan&inodot;c&inodot; ara...">
                         <button class="admin-btn primary" onclick="adminSearchUser()" style="margin-top: 10px; width: 100%;">Ara</button>
                     </div>
-                    
+                   
                     <div class="user-management">
                         <div id="admin-user-list">
                             <!-- Kullan&inodot;c&inodot;lar buraya eklenecek -->
                         </div>
                     </div>
-                    
+                   
                     <div class="form-group">
                         <button class="admin-btn primary" onclick="adminAddTestUser()" style="width: 100%;">Test Kullan&inodot;c&inodot;s&inodot; Ekle</button>
                         <button class="admin-btn danger" onclick="adminDeleteAllUsers()" style="width: 100%; margin-top: 10px;">T&uuml;m Kullan&inodot;c&inodot;lar&inodot; Sil</button>
                     </div>
                 </div>
-
                 <div class="admin-card">
                     <h3>Yeni Kullan&inodot;c&inodot; Ekle</h3>
                     <div class="form-group">
@@ -1448,7 +1274,6 @@
                     <button class="admin-btn success" onclick="adminCreateUser()" style="width: 100%;">Kullan&inodot;c&inodot; Olu&scedil;tur</button>
                 </div>
             </div>
-
             <!-- İçerik Yönetimi -->
             <div class="admin-grid">
                 <div class="admin-card">
@@ -1463,7 +1288,6 @@
                     </div>
                     <button class="admin-btn primary" onclick="adminUpdateSiteInfo()" style="width: 100%;">Site Bilgilerini G&uuml;ncelle</button>
                 </div>
-
                 <div class="admin-card">
                     <h3>Metin Y&ouml;netimi</h3>
                     <div class="text-management" id="text-management">
@@ -1472,7 +1296,6 @@
                     <button class="admin-btn primary" onclick="adminSaveAllTexts()" style="width: 100%; margin-top: 15px;">T&uuml;m Metinleri Kaydet</button>
                 </div>
             </div>
-
             <!-- Görsel Yönetimi -->
             <div class="admin-card">
                 <h3>G&ouml;rsel Y&ouml;netimi</h3>
@@ -1490,14 +1313,13 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div id="admin-image-preview" style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">
                     <!-- G&ouml;rsel &ouml;nizlemeleri buraya eklenecek -->
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Admin Şifre Modal -->
     <div id="adminPasswordModal" class="password-modal" style="display: none;">
         <div class="password-box">
@@ -1507,28 +1329,24 @@
             <div class="password-error" id="adminPasswordError">Ge&ccedil;ersiz &scedil;ifre!</div>
         </div>
     </div>
-
     <script>
         // Admin şifresi
         const ADMIN_PASSWORD = "Gulay_Alperen***/***";
-
         // URL kontrolü için fonksiyon
         function checkURLForAdmin() {
             if (window.location.hash === '#admin') {
                 showAdminPasswordModal();
             }
         }
-
         // Admin şifre modalını göster
         function showAdminPasswordModal() {
             document.getElementById('adminPasswordModal').style.display = 'flex';
         }
-
         // Admin şifresini kontrol et
         function checkAdminPassword() {
             const password = document.getElementById('adminPasswordInput').value;
             const errorElement = document.getElementById('adminPasswordError');
-            
+           
             if (password === ADMIN_PASSWORD) {
                 document.getElementById('adminPasswordModal').style.display = 'none';
                 showAdminPage();
@@ -1537,14 +1355,12 @@
                 document.getElementById('adminPasswordInput').value = '';
             }
         }
-
         // Admin sayfasını göster
         function showAdminPage() {
             document.getElementById('main-site').style.display = 'none';
             document.getElementById('admin-page').classList.add('active');
             loadAdminPageData();
         }
-
         // Ana siteye dön
         function goToMainSite() {
             document.getElementById('main-site').style.display = 'block';
@@ -1552,14 +1368,12 @@
             // URL'den hash'i kaldır
             history.replaceState(null, null, ' ');
         }
-
         // Metin elementlerine ID atama
         function assignTextIds() {
             let headingIndex = 0;
             let paragraphIndex = 0;
             let listItemIndex = 0;
             let buttonIndex = 0;
-
             // Başlıklar
             document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((el) => {
                 if (el.textContent.trim() && !el.querySelector('button') && !el.closest('.admin-page')) {
@@ -1568,7 +1382,6 @@
                     }
                 }
             });
-
             // Paragraflar
             document.querySelectorAll('p').forEach((el) => {
                 if (el.textContent.trim() && !el.closest('.admin-page')) {
@@ -1577,7 +1390,6 @@
                     }
                 }
             });
-
             // Listeler
             document.querySelectorAll('li').forEach((el) => {
                 if (el.textContent.trim() && !el.closest('.admin-page')) {
@@ -1586,7 +1398,6 @@
                     }
                 }
             });
-
             // Butonlar
             document.querySelectorAll('button').forEach((el) => {
                 if (el.textContent.trim() && !el.classList.contains('admin-btn') && !el.classList.contains('delete-btn') && !el.closest('.admin-page')) {
@@ -1596,7 +1407,6 @@
                 }
             });
         }
-
         // Orijinal metinleri kaydet
         function saveOriginalTexts() {
             const originalTexts = {};
@@ -1605,7 +1415,6 @@
             });
             localStorage.setItem('originalTexts', JSON.stringify(originalTexts));
         }
-
         // Kaydedilmiş metinleri yükle
         function loadSavedTexts() {
             const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
@@ -1616,7 +1425,6 @@
                 }
             });
         }
-
         // Kaldırılmış elementleri yükle
         function loadRemovedElements() {
             const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
@@ -1627,42 +1435,40 @@
                 }
             });
         }
-
         // Admin sayfası verilerini yükle
         function loadAdminPageData() {
             // Kullanıcı verileri
             const users = JSON.parse(localStorage.getItem('users')) || [];
             document.getElementById('admin-total-users').textContent = users.length;
             document.getElementById('admin-online-users').textContent = users.filter(user => user.lastLogin).length;
-            
+           
             // Görsel sayısı
             const imageContainers = document.querySelectorAll('.image-wrapper');
             document.getElementById('admin-total-images').textContent = imageContainers.length;
-            
+           
             // AI sohbet sayısı
             document.getElementById('admin-ai-chats').textContent = Math.floor(Math.random() * 50) + 10;
-            
+           
             // Kullanıcı listesini güncelle
             updateAdminUserList();
-            
+           
             // Mevcut site bilgilerini yükle
             loadCurrentSiteInfo();
-            
+           
             // Görsel önizlemeleri yükle
             updateImagePreviews();
-            
+           
             // Tüm metinleri yükle
             loadAllTexts();
         }
-
         // Tüm metinleri admin panele yükle
         function loadAllTexts() {
             const textManagement = document.getElementById('text-management');
             textManagement.innerHTML = '';
-            
+           
             const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
             const elements = document.querySelectorAll('[data-text-id]');
-            
+           
             elements.forEach((el) => {
                 const id = el.getAttribute('data-text-id');
                 if (!removedElements.includes(id) && !el.closest('.admin-page')) {
@@ -1671,8 +1477,8 @@
                     textItem.className = 'text-item';
                     textItem.innerHTML = `
                         <label>${type.toUpperCase()} - ${id}</label>
-                        <textarea 
-                            class="form-control text-content" 
+                        <textarea
+                            class="form-control text-content"
                             data-id="${id}"
                             rows="3"
                             placeholder="Metin i&ccedil;eri&gbreve;i"
@@ -1687,27 +1493,24 @@
                 }
             });
         }
-
         // Tekil metin elementini güncelle
         function updateTextElement(elementId) {
             const textarea = document.querySelector(`.text-content[data-id="${elementId}"]`);
             const newText = textarea.value;
-            
+           
             const el = document.querySelector(`[data-text-id="${elementId}"]`);
             if (el) {
                 el.innerHTML = newText;
                 saveTextToLocalStorage(elementId, newText);
-                alert('Metin g&uuml;ncellendi!');
+                alert(decodeHtml('Metin g&uuml;ncellendi!'));
             }
         }
-
         // Metni localStorage'a kaydet
         function saveTextToLocalStorage(elementId, text) {
             const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
             savedTexts[elementId] = text;
             localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
         }
-
         // Metin elementini kaldır
         function removeTextElement(elementId) {
             if (confirm('Bu metni kald&inodot;rmak istedi&gbreve;inizden emin misiniz?')) {
@@ -1719,17 +1522,16 @@
                         removedElements.push(elementId);
                     }
                     localStorage.setItem('removedElements', JSON.stringify(removedElements));
-                    
+                   
                     const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
                     delete savedTexts[elementId];
                     localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
-                    
+                   
                     loadAllTexts();
-                    alert('Metin kald&inodot;r&inodot;ld&inodot;!');
+                    alert(decodeHtml('Metin kald&inodot;r&inodot;ld&inodot;!'));
                 }
             }
         }
-
         // Metin elementini sıfırla
         function resetTextElement(elementId) {
             const originalTexts = JSON.parse(localStorage.getItem('originalTexts')) || {};
@@ -1737,20 +1539,19 @@
             if (el && originalTexts[elementId]) {
                 el.innerHTML = originalTexts[elementId];
                 el.style.display = '';
-                
+               
                 const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || {};
                 delete savedTexts[elementId];
                 localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
-                
+               
                 const removedElements = JSON.parse(localStorage.getItem('removedElements')) || [];
                 const updatedRemoved = removedElements.filter(id => id !== elementId);
                 localStorage.setItem('removedElements', JSON.stringify(updatedRemoved));
-                
+               
                 loadAllTexts();
-                alert('Metin s&inodot;f&inodot;rland&inodot;!');
+                alert(decodeHtml('Metin s&inodot;f&inodot;rland&inodot;!'));
             }
         }
-
         // Tüm metinleri toplu kaydet
         function adminSaveAllTexts() {
             const textareas = document.querySelectorAll('.text-content');
@@ -1763,21 +1564,20 @@
                     saveTextToLocalStorage(elementId, newText);
                 }
             });
-            alert('T&uuml;m metinler kaydedildi!');
+            alert(decodeHtml('T&uuml;m metinler kaydedildi!'));
         }
-
         // Admin kullanıcı listesini güncelle
         function updateAdminUserList() {
             const userList = document.getElementById('admin-user-list');
             const users = JSON.parse(localStorage.getItem('users')) || [];
-            
+           
             userList.innerHTML = '';
-            
+           
             if (users.length === 0) {
                 userList.innerHTML = '<div style="text-align: center; color: var(--tertiary-text); padding: 20px;">Hen&uuml;z kullan&inodot;c&inodot; bulunmuyor</div>';
                 return;
             }
-            
+           
             users.forEach(user => {
                 const userItem = document.createElement('div');
                 userItem.className = 'user-item';
@@ -1794,34 +1594,32 @@
                 userList.appendChild(userItem);
             });
         }
-
         // Mevcut site bilgilerini yükle
         function loadCurrentSiteInfo() {
             // Site başlığı ve açıklaması
             const headerTitle = document.querySelector('header h1');
             const metaDescription = document.querySelector('meta[name="description"]');
-            
+           
             if (headerTitle) {
                 document.getElementById('admin-site-title').value = headerTitle.textContent;
             }
-            
+           
             if (metaDescription) {
                 document.getElementById('admin-site-description').value = metaDescription.getAttribute('content');
             }
         }
-
         // Görsel önizlemelerini güncelle
         function updateImagePreviews() {
             const previewContainer = document.getElementById('admin-image-preview');
             const images = document.querySelectorAll('.image-wrapper img');
-            
+           
             previewContainer.innerHTML = '';
-            
+           
             if (images.length === 0) {
                 previewContainer.innerHTML = '<div style="text-align: center; color: var(--tertiary-text); padding: 20px; grid-column: 1 / -1;">Hen&uuml;z g&ouml;rsel bulunmuyor</div>';
                 return;
             }
-            
+           
             images.forEach((img, index) => {
                 const preview = document.createElement('div');
                 preview.style.position = 'relative';
@@ -1830,35 +1628,32 @@
                 preview.style.border = '1px solid var(--border-color)';
                 preview.innerHTML = `
                     <img src="${img.src}" style="width: 100%; height: 100px; object-fit: cover;">
-                    <button class="admin-btn danger" onclick="adminDeleteImage(${index})" 
+                    <button class="admin-btn danger" onclick="adminDeleteImage(${index})"
                             style="position: absolute; top: 5px; right: 5px; padding: 2px 6px; font-size: 12px;">X</button>
                 `;
                 previewContainer.appendChild(preview);
             });
         }
-
         // Admin işlevleri
         function adminClearAllData() {
             if (confirm('T&Uuml;M veriler silinecek! Emin misiniz?')) {
                 localStorage.clear();
-                alert('T&uuml;m veriler temizlendi!');
+                alert(decodeHtml('T&uuml;m veriler temizlendi!'));
                 loadAdminPageData();
             }
         }
-
         function adminExportData() {
             const users = JSON.parse(localStorage.getItem('users')) || [];
             const dataStr = JSON.stringify(users, null, 2);
             const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            
+           
             const link = document.createElement('a');
             link.href = URL.createObjectURL(dataBlob);
             link.download = 'apex-solutions-backup.json';
             link.click();
-            
-            alert('Veriler ba&scedil;ar&inodot;yla d&inodot;&scedil;a aktar&inodot;ld&inodot;!');
+           
+            alert(decodeHtml('Veriler ba&scedil;ar&inodot;yla d&inodot;&scedil;a aktar&inodot;ld&inodot;!'));
         }
-
         function adminBackupSystem() {
             const backupData = {
                 users: JSON.parse(localStorage.getItem('users')) || [],
@@ -1868,43 +1663,40 @@
                     totalImages: document.getElementById('admin-total-images').textContent
                 }
             };
-            
+           
             localStorage.setItem('systemBackup', JSON.stringify(backupData));
-            alert(`Sistem yede&gbreve;i al&inodot;nd&inodot;: ${backupData.timestamp}`);
+            alert(decodeHtml(`Sistem yede&gbreve;i al&inodot;nd&inodot;: ${backupData.timestamp}`));
         }
-
         function adminResetSystem() {
             if (confirm('S&Idot;STEM SIFIRLANACAK! T&uuml;m veriler kaybolacak. Emin misiniz?')) {
                 localStorage.clear();
                 sessionStorage.clear();
-                alert('Sistem s&inodot;f&inodot;rland&inodot;! Sayfa yeniden y&uuml;klenecek.');
+                alert(decodeHtml('Sistem s&inodot;f&inodot;rland&inodot;! Sayfa yeniden y&uuml;klenecek.'));
                 location.reload();
             }
         }
-
         function adminSearchUser() {
             const searchTerm = document.getElementById('admin-search-user').value.toLowerCase();
             const users = JSON.parse(localStorage.getItem('users')) || [];
-            const filteredUsers = users.filter(user => 
+            const filteredUsers = users.filter(user =>
                 user.username.toLowerCase().includes(searchTerm)
             );
-            
+           
             if (filteredUsers.length > 0) {
-                alert(`Bulunan kullan&inodot;c&inodot;lar: ${filteredUsers.map(u => u.username).join(', ')}`);
+                alert(decodeHtml(`Bulunan kullan&inodot;c&inodot;lar: ${filteredUsers.map(u => u.username).join(', ')}`));
             } else {
-                alert('Kullan&inodot;c&inodot; bulunamad&inodot;!');
+                alert(decodeHtml('Kullan&inodot;c&inodot; bulunamad&inodot;!'));
             }
         }
-
         function adminAddTestUser() {
             const testUsers = [
                 {username: 'testuser1', password: 'test123'},
                 {username: 'demo_user', password: 'demo123'},
                 {username: 'admin_test', password: 'admin123'}
             ];
-            
+           
             const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-            
+           
             testUsers.forEach(testUser => {
                 if (!existingUsers.some(user => user.username === testUser.username)) {
                     existingUsers.push({
@@ -1913,122 +1705,116 @@
                     });
                 }
             });
-            
+           
             localStorage.setItem('users', JSON.stringify(existingUsers));
-            alert('Test kullan&inodot;c&inodot;lar&inodot; eklendi!');
+            alert(decodeHtml('Test kullan&inodot;c&inodot;lar&inodot; eklendi!'));
             updateAdminUserList();
             loadAdminPageData();
         }
-
         function adminDeleteAllUsers() {
             if (confirm('T&Uuml;M kullan&inodot;c&inodot;lar silinecek! Emin misiniz?')) {
                 localStorage.setItem('users', JSON.stringify([]));
-                alert('T&uuml;m kullan&inodot;c&inodot;lar silindi!');
+                alert(decodeHtml('T&uuml;m kullan&inodot;c&inodot;lar silindi!'));
                 updateAdminUserList();
                 loadAdminPageData();
             }
         }
-
         function adminCreateUser() {
             const username = document.getElementById('admin-new-username').value.trim();
             const password = document.getElementById('admin-new-password').value;
             const confirmPassword = document.getElementById('admin-new-password-confirm').value;
-            
+           
             if (!username || !password) {
-                alert('T&uuml;m alanlar&inodot; doldurun!');
+                alert(decodeHtml('T&uuml;m alanlar&inodot; doldurun!'));
                 return;
             }
-            
+           
             if (password !== confirmPassword) {
-                alert('&Scedil;ifreler uymuyor!');
+                alert(decodeHtml('&Scedil;ifreler uymuyor!'));
                 return;
             }
-            
+           
             if (password.length < 4) {
-                alert('&Scedil;ifre en az 4 karakter olmal&inodot;!');
+                alert(decodeHtml('&Scedil;ifre en az 4 karakter olmal&inodot;!'));
                 return;
             }
-            
+           
             const users = JSON.parse(localStorage.getItem('users')) || [];
-            
+           
             if (users.some(user => user.username === username)) {
-                alert('Bu kullan&inodot;c&inodot; ad&inodot; zaten al&inodot;nm&inodot;&scedil;!');
+                alert(decodeHtml('Bu kullan&inodot;c&inodot; ad&inodot; zaten al&inodot;nm&inodot;&scedil;!'));
                 return;
             }
-            
+           
             users.push({
                 username: username,
                 password: password,
                 lastLogin: new Date().toLocaleString()
             });
-            
+           
             localStorage.setItem('users', JSON.stringify(users));
-            alert('Kullan&inodot;c&inodot; ba&scedil;ar&inodot;yla olu&scedil;turuldu!');
-            
+            alert(decodeHtml('Kullan&inodot;c&inodot; ba&scedil;ar&inodot;yla olu&scedil;turuldu!'));
+           
             // Formu temizle
             document.getElementById('admin-new-username').value = '';
             document.getElementById('admin-new-password').value = '';
             document.getElementById('admin-new-password-confirm').value = '';
-            
+           
             updateAdminUserList();
             loadAdminPageData();
         }
-
         function adminEditUser(username) {
             const newPassword = prompt(`${username} i&ccedil;in yeni &scedil;ifre girin:`);
             if (newPassword) {
                 if (newPassword.length < 4) {
-                    alert('&Scedil;ifre en az 4 karakter olmal&inodot;!');
+                    alert(decodeHtml('&Scedil;ifre en az 4 karakter olmal&inodot;!'));
                     return;
                 }
-                
+               
                 const users = JSON.parse(localStorage.getItem('users')) || [];
                 const userIndex = users.findIndex(user => user.username === username);
-                
+               
                 if (userIndex !== -1) {
                     users[userIndex].password = newPassword;
                     localStorage.setItem('users', JSON.stringify(users));
-                    alert('Kullan&inodot;c&inodot; &scedil;ifresi g&uuml;ncellendi!');
+                    alert(decodeHtml('Kullan&inodot;c&inodot; &scedil;ifresi g&uuml;ncellendi!'));
                     updateAdminUserList();
                 }
             }
         }
-
         function adminDeleteUser(username) {
             if (confirm(`${username} kullan&inodot;c&inodot;s&inodot;n&inodot; silmek istedi&gbreve;inizden emin misiniz?`)) {
                 const users = JSON.parse(localStorage.getItem('users')) || [];
                 const filteredUsers = users.filter(user => user.username !== username);
                 localStorage.setItem('users', JSON.stringify(filteredUsers));
-                alert('Kullan&inodot;c&inodot; silindi!');
+                alert(decodeHtml('Kullan&inodot;c&inodot; silindi!'));
                 updateAdminUserList();
                 loadAdminPageData();
             }
         }
-
         function adminUpdateSiteInfo() {
             const newTitle = document.getElementById('admin-site-title').value;
             const newDescription = document.getElementById('admin-site-description').value;
-            
+           
             if (newTitle) {
                 const headerTitle = document.querySelector('header h1');
                 if (headerTitle) {
                     headerTitle.textContent = newTitle;
                 }
             }
-            
+           
             if (newDescription) {
                 const metaDescription = document.querySelector('meta[name="description"]');
                 if (metaDescription) {
                     metaDescription.setAttribute('content', newDescription);
                 }
             }
-            
-            alert('Site bilgileri g&uuml;ncellendi!');
+           
+            alert(decodeHtml('Site bilgileri g&uuml;ncellendi!'));
         }
-
         function adminAddCustomImage() {
             const imageUrl = document.getElementById('admin-image-url').value.trim();
-            
+           
             if (imageUrl) {
                 // Mevcut addCustomImage fonksiyonunu kullan
                 const customImageInput = document.getElementById('customImageUrl');
@@ -2042,19 +1828,17 @@
                     loadAdminPageData();
                 }, 1000);
             } else {
-                alert('L&uuml;tfen ge&ccedil;erli bir g&ouml;rsel URL&apos;si girin!');
+                alert(decodeHtml('L&uuml;tfen ge&ccedil;erli bir g&ouml;rsel URL&apos;si girin!'));
             }
         }
-
         function adminAddSampleImages() {
             addSampleImages();
             setTimeout(() => {
                 updateImagePreviews();
                 loadAdminPageData();
             }, 1000);
-            alert('&Ouml;rnek g&ouml;rseller eklendi!');
+            alert(decodeHtml('&Ouml;rnek g&ouml;rseller eklendi!'));
         }
-
         function adminClearAllImages() {
             if (confirm('T&uuml;m g&ouml;rseller silinecek! Emin misiniz?')) {
                 const imageContainer = document.getElementById('image-container');
@@ -2063,33 +1847,29 @@
                 }
                 updateImagePreviews();
                 loadAdminPageData();
-                alert('T&uuml;m g&ouml;rseller temizlendi!');
+                alert(decodeHtml('T&uuml;m g&ouml;rseller temizlendi!'));
             }
         }
-
         function adminDeleteImage(index) {
             const images = document.querySelectorAll('.image-wrapper');
             if (images[index]) {
                 images[index].remove();
                 updateImagePreviews();
                 loadAdminPageData();
-                alert('G&ouml;rsel silindi!');
+                alert(decodeHtml('G&ouml;rsel silindi!'));
             }
         }
-
         // Mevcut JavaScript kodları
         function decodeHtml(html) {
             const txt = document.createElement('textarea');
             txt.innerHTML = html;
             return txt.value;
         }
-
         let users = JSON.parse(localStorage.getItem('users')) || [];
         let currentUser = null;
         let currentCategory = '';
         let allCategoryImages = {};
         let aiChatOpen = false;
-
         const aiResponses = {
             greetings: [
                 "Merhaba! Apex Solutions AI asistan&inodot;n&inodot;z. Size nas&inodot;l yard&inodot;mc&inodot; olabilirim?",
@@ -2127,13 +1907,12 @@
                 "Bu konuda detayl&inodot; bilgi veremem ama genel sorular&inodot;n&inodot;z&inodot; yan&inodot;tlayabilirim!"
             ]
         };
-
         function toggleAiChat() {
             const chatWindow = document.getElementById('ai-chat');
             const toggleBtn = document.getElementById('ai-toggle');
-            
+           
             aiChatOpen = !aiChatOpen;
-            
+           
             if (aiChatOpen) {
                 chatWindow.classList.add('open');
                 toggleBtn.innerHTML = 'X';
@@ -2144,186 +1923,162 @@
                 toggleBtn.style.background = 'linear-gradient(45deg, var(--accent-color), #ff6b9d)';
             }
         }
-
         function handleChatInput(event) {
             if (event.key === 'Enter') {
                 sendMessage();
             }
         }
-
         function sendMessage() {
             const input = document.getElementById('chat-input');
             const message = input.value.trim();
-            
+           
             if (!message) return;
-            
+           
             addMessageToChat(message, 'user');
             input.value = '';
-            
+           
             showTypingIndicator();
-            
+           
             setTimeout(() => {
                 const response = generateAIResponse(message);
                 hideTypingIndicator();
                 addAIMessageToChat(response);
             }, Math.random() * 2000 + 1000);
         }
-
         function addMessageToChat(message, sender) {
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}-message`;
             messageDiv.textContent = message;
-            
+           
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
-
         function addAIMessageToChat(htmlMessage) {
             const messagesContainer = document.getElementById('chat-messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message ai-message';
             messageDiv.innerHTML = htmlMessage;
-            
+           
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
-
         function showTypingIndicator() {
             document.getElementById('typing-indicator').style.display = 'block';
             document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
         }
-
         function hideTypingIndicator() {
             document.getElementById('typing-indicator').style.display = 'none';
         }
-
         function generateAIResponse(userMessage) {
             const message = userMessage.toLowerCase();
-            
+           
             if (message.includes('merhaba') || message.includes('selam') || message.includes('hey') || message.includes('hi')) {
                 return getRandomResponse(aiResponses.greetings);
             }
-            
+           
             if (message.includes('hakk&inodot;nda') || message.includes('&scedil;irket') || message.includes('apex')) {
                 return getRandomResponse(aiResponses.about);
             }
-            
+           
             if (message.includes('hizmet') || message.includes('ne yap&inodot;yorsunuz') || message.includes('service')) {
                 return getRandomResponse(aiResponses.services);
             }
-            
+           
             if (message.includes('oyun') || message.includes('game') || message.includes('oyna')) {
                 return getRandomResponse(aiResponses.games);
             }
-            
+           
             if (message.includes('resim') || message.includes('g&ouml;rsel') || message.includes('foto&gbreve;raf') || message.includes('image')) {
                 return getRandomResponse(aiResponses.images);
             }
-            
+           
             if (message.includes('yard&inodot;m') || message.includes('help') || message.includes('nas&inodot;l') || message.includes('ne yapabilirim')) {
                 return getRandomResponse(aiResponses.help);
             }
-            
+           
             if (message.includes('ileti&scedil;im') || message.includes('telefon') || message.includes('mail') || message.includes('contact')) {
                 return "&Idot;leti&scedil;im bilgilerimiz: 0 536 799 50 89 | alperenizer07@gmail.com | &Ccedil;al&inodot;&scedil;ma saatleri: 09:00-18:00";
             }
-            
+           
             if (message.includes('te&scedil;ekk&uuml;r') || message.includes('sa&gbreve;ol') || message.includes('thank')) {
                 return "Rica ederim! Ba&scedil;ka bir &scedil;ey i&ccedil;in yard&inodot;ma ihtiyac&inodot;n&inodot;z olursa buray&inodot;m!";
             }
-            
+           
             return getRandomResponse(aiResponses.default);
         }
-
         function getRandomResponse(responses) {
             return responses[Math.floor(Math.random() * responses.length)];
         }
-
         function moveMenuButtonDown() {
             const sidebarToggle = document.getElementById('sidebar-toggle');
             sidebarToggle.classList.add('moved-down');
         }
-
         function moveMenuButtonUp() {
             const sidebarToggle = document.getElementById('sidebar-toggle');
             sidebarToggle.classList.remove('moved-down');
         }
-
         function showRegisterForm() {
             document.getElementById('loginBox').style.display = 'none';
             document.getElementById('registerBox').style.display = 'block';
             document.getElementById('registerError').textContent = '';
         }
-
         function showLoginForm() {
             document.getElementById('registerBox').style.display = 'none';
             document.getElementById('loginBox').style.display = 'block';
             document.getElementById('loginError').style.display = 'none';
         }
-
         function registerUser() {
             const username = document.getElementById('regUsername').value.trim();
             const password = document.getElementById('regPassword').value;
             const confirmPassword = document.getElementById('regConfirmPassword').value;
             const errorElement = document.getElementById('registerError');
-
             if (!username || !password || !confirmPassword) {
                 errorElement.innerHTML = 'T&uuml;m alanlar&inodot; doldurun!';
                 errorElement.style.display = 'block';
                 return;
             }
-
             if (password !== confirmPassword) {
                 errorElement.innerHTML = '&Scedil;ifreler uymuyor!';
                 errorElement.style.display = 'block';
                 return;
             }
-
             if (password.length < 4) {
                 errorElement.innerHTML = '&Scedil;ifre en az 4 karakter olmal&inodot;!';
                 errorElement.style.display = 'block';
                 return;
             }
-
             if (users.some(user => user.username === username)) {
                 errorElement.innerHTML = 'Bu kullan&inodot;c&inodot; ad&inodot; zaten al&inodot;nm&inodot;&scedil;!';
                 errorElement.style.display = 'block';
                 return;
             }
-
             users.push({
                 username: username,
                 password: password,
                 lastLogin: new Date().toLocaleString()
             });
-
             localStorage.setItem('users', JSON.stringify(users));
-            alert('Kay&inodot;t ba&scedil;ar&inodot;l&inodot;! Giri&scedil; yapabilirsiniz.');
+            alert(decodeHtml('Kay&inodot;t ba&scedil;ar&inodot;l&inodot;! Giri&scedil; yapabilirsiniz.'));
             showLoginForm();
-
             document.getElementById('regUsername').value = '';
             document.getElementById('regPassword').value = '';
             document.getElementById('regConfirmPassword').value = '';
         }
-
         function checkLogin() {
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
             const loginError = document.getElementById("loginError");
             const loginBox = document.getElementById('loginBox');
             const mainContent = document.getElementById('main-content');
-
             const user = users.find(user => user.username === username && user.password === password);
-
             if (user) {
                 currentUser = user;
                 user.lastLogin = new Date().toLocaleString();
                 localStorage.setItem('users', JSON.stringify(users));
-                
+               
                 loginError.style.display = "none";
                 loginBox.classList.add('fade-out');
-
                 setTimeout(() => {
                     document.getElementById("loginModal").style.display = "none";
                     loginBox.classList.remove('fade-out');
@@ -2338,53 +2093,43 @@
                 loginError.style.display = "block";
             }
         }
-
         function deleteImage(button) {
             const imageWrapper = button.parentElement;
             imageWrapper.style.transform = 'scale(0)';
             setTimeout(() => {
                 imageWrapper.remove();
             }, 300);
-            alert('Resim silindi!');
+            alert(decodeHtml('Resim silindi!'));
         }
-
         function addCustomImage() {
             const urlInput = document.getElementById('customImageUrl');
             const imageUrl = urlInput.value.trim();
-
             if (imageUrl && isValidUrl(imageUrl)) {
                 const container = document.getElementById('image-container');
-
                 const newWrapper = document.createElement('div');
                 newWrapper.className = 'image-wrapper';
                 newWrapper.style.transform = 'scale(0)';
-
                 const newImg = document.createElement('img');
                 newImg.src = imageUrl;
                 newImg.alt = '&Ouml;zel G&ouml;rsel';
-
                 const deleteBtn = document.createElement('button');
                 deleteBtn.className = 'delete-btn';
                 deleteBtn.innerHTML = 'X';
                 deleteBtn.onclick = function() {
                     deleteImage(this);
                 };
-
                 newWrapper.appendChild(newImg);
                 newWrapper.appendChild(deleteBtn);
                 container.appendChild(newWrapper);
-
                 setTimeout(() => {
                     newWrapper.style.transform = 'scale(1)';
                 }, 10);
-
                 urlInput.value = '';
-                alert('Resim ba&scedil;ar&inodot;yla eklendi!');
+                alert(decodeHtml('Resim ba&scedil;ar&inodot;yla eklendi!'));
             } else {
-                alert('L&uuml;tfen ge&ccedil;erli bir resim URL&apos;si girin!');
+                alert(decodeHtml('L&uuml;tfen ge&ccedil;erli bir resim URL&apos;si girin!'));
             }
         }
-
         function isValidUrl(string) {
             try {
                 new URL(string);
@@ -2393,11 +2138,10 @@
                 return false;
             }
         }
-
         function updateImages() {
             const container = document.getElementById('image-container');
             container.style.opacity = '0';
-            
+           
             setTimeout(() => {
                 container.innerHTML = '';
                 if (currentCategory) {
@@ -2406,19 +2150,17 @@
                 container.style.opacity = '1';
             }, 300);
         }
-
         function getRandomImages(images, count) {
             const shuffled = [...images].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
         }
-
         function loadCategoryImages(category) {
             const container = document.getElementById('image-container');
             container.innerHTML = '';
-            
+           
             if (!allCategoryImages[category]) {
                 const randomSeed = Date.now();
-                
+               
                 switch(category) {
                     case 'teknoloji':
                         allCategoryImages[category] = [
@@ -2432,7 +2174,7 @@
                         break;
                     case 'futbol':
                         allCategoryImages[category] = [
-                            `https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
+                            `https://images.unsplash.com/photo-1579952363873-27bda4d32bda?w=300&h=200&fit=crop&v=${randomSeed + 1}`,
                             `https://images.unsplash.com/photo-1544608104-5ba39e51911b?w=300&h=200&fit=crop&v=${randomSeed + 2}`,
                             `https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=300&h=200&fit=crop&v=${randomSeed + 3}`,
                             `https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&v=${randomSeed + 4}`,
@@ -2472,41 +2214,35 @@
                         break;
                 }
             }
-
             const randomImages = getRandomImages(allCategoryImages[category], 4);
-
             randomImages.forEach((url, index) => {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'image-wrapper';
                 wrapper.style.opacity = '0';
                 wrapper.style.transform = 'scale(0.8)';
                 wrapper.style.transition = 'all 0.5s ease';
-
                 const img = document.createElement('img');
                 img.src = url;
                 img.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} G&ouml;rseli ${index + 1}`;
-                
+               
                 const deleteBtn = document.createElement('button');
                 deleteBtn.className = 'delete-btn';
                 deleteBtn.innerHTML = 'X';
                 deleteBtn.onclick = function() {
                     deleteImage(this);
                 };
-
                 wrapper.appendChild(img);
                 wrapper.appendChild(deleteBtn);
                 container.appendChild(wrapper);
-
                 setTimeout(() => {
                     wrapper.style.opacity = '1';
                     wrapper.style.transform = 'scale(1)';
                 }, index * 200);
             });
         }
-
         function showCategory(category) {
             currentCategory = category;
-            
+           
             const baslik = document.getElementById('gorsel-baslik');
             const categoryNames = {
                 'teknoloji': 'Teknoloji',
@@ -2515,12 +2251,11 @@
                 'doga': 'Do&gbreve;a',
                 'su': 'Su'
             };
-            
+           
             baslik.innerHTML = `G&ouml;rseller - ${categoryNames[category]} <button class="update-btn" onclick="updateImages()">Yenile</button>`;
-            
+           
             loadCategoryImages(category);
         }
-
         function showSection(id) {
             const sections = document.querySelectorAll('.content > div');
             sections.forEach(section => {
@@ -2530,37 +2265,31 @@
                     section.classList.add('hidden');
                 }
             });
-
             if (id === 'gorseller' && !currentCategory) {
                 showCategory('teknoloji');
             }
         }
-        
+       
         function openSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
             const sidebarToggle = document.getElementById('sidebar-toggle');
-
             sidebar.classList.add('open');
             mainContent.classList.add('shifted');
             sidebarToggle.classList.add('open');
         }
-
         function closeSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
             const sidebarToggle = document.getElementById('sidebar-toggle');
-
             sidebar.classList.remove('open');
             mainContent.classList.remove('shifted');
             sidebarToggle.classList.remove('open');
         }
-
         function showGames(category) {
             const gamesTitle = document.getElementById('games-title');
             const gamesDescription = document.getElementById('games-description');
             const gamesContent = document.getElementById('games-content');
-
             switch(category) {
                 case 'korku':
                     gamesTitle.innerHTML = 'Korku Oyunlar&inodot;';
@@ -2647,11 +2376,10 @@
                     `;
                     break;
             }
-            
+           
             showSection('games');
             closeSidebar();
         }
-
         // Sayfa yüklendiğinde
         window.addEventListener('DOMContentLoaded', function() {
             checkURLForAdmin();
@@ -2661,10 +2389,10 @@
             }
             loadSavedTexts();
             loadRemovedElements();
-            
+           
             // Hash değişikliklerini dinle
             window.addEventListener('hashchange', checkURLForAdmin);
-            
+           
             setTimeout(() => {
                 if (!currentUser) {
                     document.getElementById("loginModal").style.display = "flex";
@@ -2677,7 +2405,6 @@
                 }
             }, 500);
         });
-
         console.log('Apex Solutions AI Powered Website Loaded!');
         console.log('Admin Panel: URL sonuna #admin ekleyin');
         console.log('Admin &Scedil;ifresi: Gulay_Alperen***/***');
